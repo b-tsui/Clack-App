@@ -1,19 +1,24 @@
-* /
+* / (splash.pug)
   * Splash
-* /login
+* /login (log-in.pug)
   * Session Form
-* /signup
+* /signup (sign-up.pug)
   * Session Form
-* /channels/:channelId
+* /channels/:channelId (channel-page.pug)
   * Messages Container
     * Messages
-* /channels/add
+  * Only accessible to users with valid login
+* /channels/add (channel-create.pug)
   * Channel Form
-* /channels/:channelId/delete
+  * Only accessible to users with valid login
+    *Once created the user will become the admin
+* /channels/:channelId/delete (redirect to main-page.pug)
   * Confirm page
-* /channels/:channelId/update
+  *Channel owner can delete
+* /channels/:channelId/update (channel-page.pug)
   * Update Channel Form
-* /users/:userId
+  * Channer owner can update
+* /users/:userId (profile.pug)
   * Profile Page
-* /users/:userId/updateProfile
+* /users/:userId/updateProfile (profile-edit.pug)
   * Profile form

@@ -14,8 +14,10 @@
 | attribute name | data type |               details |
 | -------------- | :-------: | --------------------: |
 | id             |  integer  | not null, primary key |
+| creatorId      |  integer  | not null, foreign key |
 | name           |  string   |      not null, unique |
-| isPrivate      |  boolean  |              not null |
+| isDM           |  boolean  |              not null |
+| ownerId        |  integer  | not null, foreign key |
 | createdAt      | timestamp |              not null |
 | updatedAt      | timestamp |              not null |
 
@@ -29,7 +31,7 @@
 | createdAt      | timestamp |              not null |
 | updatedAt      | timestamp |              not null |
 
-## **members**
+## **channelUsers**
 | attribute name | data type |               details |
 | -------------- | :-------: | --------------------: |
 | id             |  integer  | not null, primary key |
