@@ -23,10 +23,12 @@
     * option to show channel creator/admin
   * contains messages for that channel
     * scrollable
-  * text area to send messages
+    * text area to send messages
 * channel-create.pug
+  * extends layout.pug
   * form to create new channel
 * dm-create.pug
+  * extends layout.pug
   * creates a private channel
 * profile.pug
   * displays user info
