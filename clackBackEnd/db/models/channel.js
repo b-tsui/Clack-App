@@ -16,9 +16,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
   Channel.associate = function (models) {
-    Channel.belongsTo(models.User, { foreignKey: "userId" });
-    Channel.belongsTo(model.ChannelUser, { foreignKey: "channelId" });
-    Channel.hasMany(model.Message, { foreignKey: 'channelId' });
+    Channel.belongsToMany(models.User, {
+      through: "ChannelUsers",
+      foreignKey: "channelId",
+      otherKey: "userId"
+    });
+    Channel.belongsTo(models.User, { foreignKey: 'userId' });
+    // Channel.belongsTo(models.ChannelUser, { foreignKey: "channelId" });
+    Channel.hasMany(models.Message, { foreignKey: 'channelId' });
   };
   return Channel;
 };

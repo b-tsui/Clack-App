@@ -11,8 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
   ChannelUser.associate = function (models) {
-    ChannelUser.hasMany(models.User, { foreignKey: "userlId" });
-    ChannelUser.hasMany(models.Channel, { foreignKey: "channelId" });
+
   };
   return ChannelUser;
 };

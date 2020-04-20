@@ -18,8 +18,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
   User.associate = function (models) {
-    User.hasMany(models.Channel, { foreignKey: "userId" });
-    User.belongsTo(models.ChannelUser, { foreignKey: 'userId' });
+    User.belongsToMany(models.Channel, {
+      through: "ChannelUsers",
+      foreignKey: "userId",
+      otherKey: "channelId"
+    });
+    User.hasMany(models.Channel, { foreignKey: 'userId' });
     User.hasMany(models.Message, { foreignKey: 'userId' });
   };
 
