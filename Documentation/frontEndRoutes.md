@@ -17,7 +17,7 @@
   * Confirm page
   *Channel owner can delete
 * /channels/:channelId/update (channel-page.pug)
-  * * pop-up over mainpage using ajax
+  * pop-up over mainpage using ajax
   * Update Channel Form
   * Channel owner can update
 * /users/:userId (profile.pug)
