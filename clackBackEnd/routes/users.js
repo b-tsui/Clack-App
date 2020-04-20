@@ -93,4 +93,15 @@ router.put('/:id(\\d+)', handleValidationErrors, asyncHandler(async (req, res, n
     }
 }));
 
+router.delete('/:id(\\d+)', asyncHandler(async (req, res, next) => {
+    const userId = parseInt(req.params.id, 10);
+    const user = await User.findByPk(userId);
+    if (user) {
+        await user.destroy();
+        res.status(204).end();
+    } else {
+        next(userNotFoundError(userId));
+    }
+}));
+
 module.exports = router;
