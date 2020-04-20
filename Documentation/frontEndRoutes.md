@@ -9,6 +9,7 @@
     * Messages
   * Only accessible to users with valid login
 * /channels/add (channel-create.pug)
+  * pop-up over mainpage using ajax
   * Channel Form
   * Only accessible to users with valid login
     *Once created the user will become the admin
@@ -16,9 +17,11 @@
   * Confirm page
   *Channel owner can delete
 * /channels/:channelId/update (channel-page.pug)
+  * * pop-up over mainpage using ajax
   * Update Channel Form
-  * Channer owner can update
+  * Channel owner can update
 * /users/:userId (profile.pug)
   * Profile Page
 * /users/:userId/updateProfile (profile-edit.pug)
   * Profile form
+  * Only associated user can edit their profile

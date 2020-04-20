@@ -17,19 +17,19 @@
 | creatorId      |  integer  | not null, foreign key |
 | name           |  string   |      not null, unique |
 | isDM           |  boolean  |              not null |
-| ownerId        |  integer  | not null, foreign key |
+| userId         |  integer  | not null, foreign key |
 | createdAt      | timestamp |              not null |
 | updatedAt      | timestamp |              not null |
 
 ## **messages**
-| attribute name | data type |               details |
-| -------------- | :-------: | --------------------: |
-| id             |  integer  | not null, primary key |
-| message        |  integer  |              not null |
-| userId         |  integer  | not null, foreign key |
-| channelId      |  integer  | not null, foreign key |
-| createdAt      | timestamp |              not null |
-| updatedAt      | timestamp |              not null |
+| attribute name | data type  |               details |
+| -------------- | :--------: | --------------------: |
+| id             |  integer   | not null, primary key |
+| message        | varchar255 |              not null |
+| userId         |  integer   | not null, foreign key |
+| channelId      |  integer   | not null, foreign key |
+| createdAt      | timestamp  |              not null |
+| updatedAt      | timestamp  |              not null |
 
 ## **channelUsers**
 | attribute name | data type |               details |
