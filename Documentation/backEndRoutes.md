@@ -1,6 +1,7 @@
 * users
   * GET /users/:id => get a single users info
   * POST /users => create a new user
+  * POST /users/token => verifies user login and returns token for the user
   * PUT /users/:id => update a users info
   * DELETE /users/:id => delete a user
 * channels
