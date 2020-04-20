@@ -1,0 +1,91 @@
+body {
+    height: 100%;
+    margin: 0;
+    background-color: #000099;
+}
+
+.nav {
+    
+    background-color: #003399;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 40px;
+    width: 100%;
+    font-size: 25px;
+    color: maroon;
+    
+    font-weight: bold;
+    font-style: italic;
+    
+
+}
+
+.container {
+    
+    border-radius: .5em;
+    width: 80%;
+    height: 100%;
+    float: right;
+}
+
+.messageField {
+    
+    border-radius: .5em;
+    
+}
+
+.chatWin {
+    border: 1px solid black;
+    border-radius: .5em;
+    padding: 5px;
+    height: 630px;
+    background-color: white;
+    font-size: 18px;
+    overflow-y: scroll;
+    
+}
+
+.texts {
+    border-radius: .5em;
+    padding: 15px;
+    height: 530px;
+    background-color: white;
+    font-size: 18px;
+    overflow-y: scroll,
+}
+
+.broadcast {
+   
+    background-color: white;
+    border-radius: .5em;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 40px;
+    width: 35%;
+    font-size: 18px;
+    
+}
+
+#input {
+    border: 1px solid black;
+    border-radius: .5em;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 40px;
+    width: 100%;
+    font-size: 18px;
+   
+}
+
+#button {
+    
+    border-radius: .5em;
+    background-color: whitesmoke;
+    height: 40px;
+    width: 100%;
+}
+
+#button:hover {
+    background-color: gray;
+    
+}
