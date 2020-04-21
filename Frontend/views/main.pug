@@ -5,6 +5,7 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
         link(rel="stylesheet", type="text/css", href="./styles/main.css")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js")
     body
       div.grid-container
         div.nav
@@ -17,3 +18,4 @@ html(lang="en")
           div.messageField
             input(type="text" id="messages" placeholder="Type something here...")
             div(id="buttons")
+      script(src="./scripts/index.js")
