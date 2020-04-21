@@ -5,7 +5,8 @@ const cors = require("cors")
 
 const app = express();
 const usersRouter = require('./routes/users');
-const channelsRouter = require('./routes/channels')
+const channelsRouter = require('./routes/channels');
+const messagesRouter = require('./routes/messages');
 const { environment } = require('./config');
 
 app.set('view engine', 'pug');
@@ -16,7 +17,8 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/users', usersRouter);
-app.use('/channels', channelsRouter)
+app.use('/channels', channelsRouter);
+app.use('/', messagesRouter);
 
 // Catch unhandled requests and forward to error handler.
 app.use((req, res, next) => {
