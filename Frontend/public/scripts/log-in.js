@@ -21,9 +21,10 @@ logInForm.addEventListener("submit", async (e) => {
         }
         const {
             token,
-            user: { id },
+            user: { id, name },
         } = await res.json();
         // storage access_token in localStorage:
+        localStorage.setItem("CLACK_CURRENT_USER_FULLNAME", name)
         localStorage.setItem("CLACK_ACCESS_TOKEN", token);
         localStorage.setItem("CLACK_CURRENT_USER_ID", id);
         // redirect to home page to see all tweets:
