@@ -9,7 +9,7 @@ logInForm.addEventListener("submit", async (e) => {
     const password = formData.get("password");
     const body = { email, password };
     try {
-        const res = await fetch("http://localhost:8080/users/token", {
+        const res = await fetch("http://localhost:8000/users/token", {
             method: "POST",
             body: JSON.stringify(body),
             headers: {
@@ -24,10 +24,10 @@ logInForm.addEventListener("submit", async (e) => {
             user: { id },
         } = await res.json();
         // storage access_token in localStorage:
-        localStorage.setItem("TWITTER_LITE_ACCESS_TOKEN", token);
-        localStorage.setItem("TWITTER_LITE_CURRENT_USER_ID", id);
+        localStorage.setItem("CLACK_ACCESS_TOKEN", token);
+        localStorage.setItem("CLACK_CURRENT_USER_ID", id);
         // redirect to home page to see all tweets:
-        window.location.href = "/";
+        window.location.href = "/main";
     } catch (err) {
         handleErrors(err);
     }
