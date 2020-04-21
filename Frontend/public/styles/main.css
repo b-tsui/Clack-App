@@ -1,44 +1,77 @@
 body {
-    height: 100%;
+    
     margin: 0;
-    background-color: #000099;
+    padding: 0;
+    
 }
 
+.grid-container {
+  display: grid; 
+  
+  grid-template-columns: 17% 83%;
+  grid-template-rows: 5% 95%;
+  
+  
+  
+} 
+
 .nav {
-    
+    grid-column: 1 / span 2;
     background-color: #003399;
+    margin: 0;
     padding-left: 10px;
     padding-right: 10px;
-    height: 40px;
+    height: 45px;
     width: 100%;
     font-size: 25px;
-    color: maroon;
+    
     
     font-weight: bold;
     font-style: italic;
-    
 
 }
 
-.container {
-    
-    border-radius: .5em;
-    width: 80%;
+.panel {
+    background-color: lightblue;
+    grid-column: 1 / 2;
+    grid-row: 2;
+    width: 100%;
     height: 100%;
-    float: right;
+    
+    margin: 0;
 }
 
-.messageField {
+/* The Modal (background) */
+#modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.chat-container {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0;
     
-    border-radius: .5em;
+    width: 100%;
+    height: 100%;
+   
     
 }
 
 .chatWin {
-    border: 1px solid black;
-    border-radius: .5em;
+
+    
     padding: 5px;
-    height: 630px;
+    height: 730px;
     background-color: white;
     font-size: 18px;
     overflow-y: scroll;
@@ -46,9 +79,9 @@ body {
 }
 
 .texts {
-    border-radius: .5em;
+    
     padding: 15px;
-    height: 530px;
+    height: 665px;
     background-color: white;
     font-size: 18px;
     overflow-y: scroll,
@@ -57,7 +90,7 @@ body {
 .broadcast {
    
     background-color: white;
-    border-radius: .5em;
+    
     padding-left: 10px;
     padding-right: 10px;
     height: 40px;
@@ -66,9 +99,17 @@ body {
     
 }
 
-#input {
-    border: 1px solid black;
+.messageField {
+    /* justify-self: stretch; */
     border-radius: .5em;
+    width: 95%;
+    margin: 0 auto;
+    
+}
+
+#messages {
+    border: 1px solid black;
+    border-radius: .2em;
     padding-left: 10px;
     padding-right: 10px;
     height: 40px;
@@ -77,15 +118,4 @@ body {
    
 }
 
-#button {
-    
-    border-radius: .5em;
-    background-color: whitesmoke;
-    height: 40px;
-    width: 100%;
-}
 
-#button:hover {
-    background-color: gray;
-    
-}
