@@ -11,7 +11,7 @@ const { environment } = require('./config');
 app.set('view engine', 'pug');
 app.use(morgan("dev"));
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:4000" }));
+app.use(cors({ origin: "http://localhost:8080" }));
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 

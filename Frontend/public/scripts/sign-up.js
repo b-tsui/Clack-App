@@ -5,12 +5,12 @@ const signUpForm = document.querySelector(".sign-up-form");
 signUpForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const formData = new FormData(signUpForm);
-    const username = formData.get("username");
+    const fullName = formData.get("fullName");
     const email = formData.get("email");
     const password = formData.get("password");
-    const body = { email, password, username };
+    const body = { fullName, email, password };
     try {
-        const res = await fetch("http://localhost:8080/users", {
+        const res = await fetch("http://localhost:8000/users", {
             method: "POST",
             body: JSON.stringify(body),
             headers: {
@@ -25,10 +25,10 @@ signUpForm.addEventListener("submit", async (e) => {
             user: { id },
         } = await res.json();
         // storage access_token in localStorage:
-        localStorage.setItem("TWITTER_LITE_ACCESS_TOKEN", token);
-        localStorage.setItem("TWITTER_LITE_CURRENT_USER_ID", id);
+        localStorage.setItem("CLACK_ACCESS_TOKEN", token);
+        localStorage.setItem("CLACK_CURRENT_USER_ID", id);
         // redirect to home page to see all tweets:
-        window.location.href = "/";
+        window.location.href = "/main";
     } catch (err) {
         handleErrors(err);
     }
