@@ -6,11 +6,14 @@ html(lang="en")
         title Document
         link(rel="stylesheet", type="text/css", href="./styles/main.css")
     body
-      div.nav
-      div.container
-        div.chatWin
-          div.texts
-          div.broadcast
-        div.messageField
-          input(type="text" id="input" placeholder="Type something here...")
-          button(type="submit" id="button") SEND
+      div.grid-container
+        div.nav
+        //- /side panel/
+        include side-panel.pug
+        div.chat-container
+          div.chatWin
+            div.texts
+            div.broadcast
+          div.messageField
+            input(type="text" id="messages" placeholder="Type something here...")
+            div(id="buttons")
