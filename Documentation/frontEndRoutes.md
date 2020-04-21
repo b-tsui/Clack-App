@@ -4,6 +4,12 @@
   * Session Form
 * /signup (sign-up.pug)
   * Session Form
+* /main (main.pug)
+  * Side panel
+  * Nav bar
+  * This is the page where profiles "pop-up" on
+  * Links to channels on side
+  * Welcome page
 * /channels/:channelId (channel-page.pug)
   * Messages Container
     * Messages
