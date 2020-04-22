@@ -7,10 +7,14 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     try {
         const user = await fetch(`http://localhost:8000/users/${userId}`, {
             headers: {
+                'Content-Type': 'application/json',
                 Authorization: `Bearer ${localStorage.getItem('CLACK_ACCESS_TOKEN')}`
             }
         })
-
+        if (user.status === 404) {
+            window.location.href = '/log-in'
+            return
+        }
         if (user.status === 401) {
             window.location.href = '/log-in';
             return
@@ -22,7 +26,6 @@ document.addEventListener("DOMContentLoaded", async (event) => {
             }
         })
         const { Messages } = await allMessages.json()
-        console.log(Messages);
         const messagesContainer = document.querySelector(".texts");
         const messagesHTML = Messages.map(
             ({ message, User: { fullName }, createdAt }) => `
@@ -40,6 +43,9 @@ document.addEventListener("DOMContentLoaded", async (event) => {
 			`
         );
         messagesContainer.innerHTML += messagesHTML.join("");
+
+        //grabbing channels for side-panel
+        const allChannels
     }
     catch (e) {
         console.error(e);
