@@ -1,10 +1,15 @@
 
-
 body {
     
     margin: 0;
     padding: 0;
     
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
 }
 
 .grid-container {
@@ -19,7 +24,7 @@ body {
     grid-column: 1 / span 2;
     background-color: #003399;
     margin: 0;
-    padding-top: 5px;
+    padding-top: 7px;
     padding-left: 10px;
     padding-right: 10px;
     height: 45px;
@@ -74,7 +79,8 @@ body {
 
 .messageField {
     /* justify-self: stretch; */
-    background-color: #f0f0f0;
+    /* background-color: #f0f0f0; */
+    background-color: #003399;;
     border: 1px solid black;
     border-radius: .2em;
     margin-right: 15px;
@@ -98,13 +104,40 @@ body {
    
 }
 
-#fontButtons {
+/* #fontButtons {
     
     
     border-radius: .2em;
     height: 35px;
     width: 100%;
+} */
+
+.icon-bar {
+  width: 100%; /* Full-width */
+  
+  overflow: auto; /* Overflow due to float */
 }
+
+.icon-bar a {
+  float: left; /* Float links side by side */
+  text-align: center; /* Center-align text */
+  width: 11%; /* Equal width (5 icons with 20% width each = 100%) */
+  padding: 12px 0; /* Some top and bottom padding */
+  transition: all 0.3s ease; /* Add transition for hover effects */
+  color: gray; /* White text color */
+  font-size: 14px; /* Increased font size */
+}
+
+.icon-bar a:hover {
+  background-color: #87bdd8; /* Add a hover color */
+}
+
+.active {
+  background-color: lightblue;
+}
+
+
+
 
 
 
