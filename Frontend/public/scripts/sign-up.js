@@ -25,9 +25,9 @@ signUpForm.addEventListener("submit", async (e) => {
             user: { id },
         } = await res.json();
         // storage access_token in localStorage:
+        localStorage.setItem("CLACK_CURRENT_USER_FULLNAME", fullName);
         localStorage.setItem("CLACK_ACCESS_TOKEN", token);
         localStorage.setItem("CLACK_CURRENT_USER_ID", id);
-        // redirect to home page to see all tweets:
         window.location.href = "/main";
     } catch (err) {
         handleErrors(err);
