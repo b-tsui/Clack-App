@@ -16,6 +16,21 @@ const userPermissionError = () => {
     return err;
 };
 
+//returns all public channels
+router.get('/', asyncHandler(async (req, res) => {
+    const pubChannels = await Channel.findAll({ where: { isDM: false } });
+    res.json(pubChannels);
+}));
+//returns all dms for specific user
+// router.get('/dms', asyncHandler(async (req, res) => {
+//     const { userId } = req.body
+//     const dmChannels = await ChannelUser.findAll({
+//         where: { userId: Number(userId) },
+//         include: [{ model: Channel }]
+//     })
+//     res.json(dmChannels)
+// }))
+
 router.get('/:channelId/members', asyncHandler(async (req, res) => {
     const channelId = parseInt(req.params.channelId, 10);
     const members = await Channel.findAll({

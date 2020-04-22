@@ -1,7 +1,10 @@
 export const handleErrors = async (err) => {
     const errorsContainer = document.querySelector(".errors-container");
-    if (err.status >= 400 && err.status < 600) {
+    if (err.status === 401) {
+        errorsContainer.innerHTML = "login failed"
+    } else if (err.status >= 400 && err.status < 600) {
         const errorJSON = await err.json();
+        console.log(err.status)
         let errorsHtml = [
             `
         <div class="alert alert-danger">

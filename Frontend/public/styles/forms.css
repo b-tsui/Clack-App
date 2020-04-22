@@ -7,28 +7,29 @@
     .mainLogin {
         background-color: #FFFFFF;
         width: 400px;
-        height: 400px;
+        height: auto;
         margin: 7em auto;
         border-radius: 1.5em;
         box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+
     }
 
     .mainSignUp {
         background-color: #FFFFFF;
         width: 400px;
-        height: 500px;
+        height: auto;
         margin: 7em auto;
         border-radius: 1.5em;
         box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
     }
     
     .sign {
-        padding-top: 40px;
-        padding-bottom: 20px;
+        padding-top: 10px;
+        padding-bottom: 15px;
         color: rgb(85, 105, 170);
         font-family: Arial, Helvetica, sans-serif, sans-serif;
         font-weight: bold;
-        font-size: 23px;
+        font-size: 30px;
     }
     
     .inputField {
@@ -81,6 +82,7 @@
         text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
         color: rgb(190, 206, 231);
         padding-top: 15px;
+        padding-bottom: 15px;
     }
 
     a {
@@ -92,8 +94,14 @@
     .demoButton{
         padding-top: 20px;
     }
+
+    .errors-container{
+        padding-top: 20px;
+        color: red;
+        font-weight: bold;
+    }
     
-    @media (max-width: 600px) {
+    @media (max-width: 600px) 
         .main {
             border-radius: 0px;
         }

@@ -19,6 +19,7 @@ logInForm.addEventListener("submit", async (e) => {
         });
         if (!res.ok) {
             throw res;
+            // console.log(res)
         }
         const {
             token,

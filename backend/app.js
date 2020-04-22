@@ -22,9 +22,9 @@ app.use('/', messagesRouter);
 
 // Catch unhandled requests and forward to error handler.
 app.use((req, res, next) => {
-    const err = new Error("The requested resource couldn't be found.");
-    err.status = 404;
-    next(err);
+    const error = new Error("The requested resource couldn't be found.");
+    error.status = 404;
+    next(error);
 });
 
 // Custom error handlers.
