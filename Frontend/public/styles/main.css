@@ -1,3 +1,5 @@
+
+
 body {
     
     margin: 0;
@@ -72,22 +74,36 @@ body {
 
 .messageField {
     /* justify-self: stretch; */
-    border-radius: .5em;
-    width: 95%;
-    margin: 0 auto;
+    background-color: #f0f0f0;
+    border: 1px solid black;
+    border-radius: .2em;
+    margin-right: 15px;
+    margin-left: 15px;
+    height: 80px;
+    width: 100%;
+    /* background-color: lightgrey; */
+    
     
 }
 
 #messages {
-    border: 1px solid black;
-    border-radius: .2em;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-left: 10px;
-    height: 40px;
-    width: 100%;
+    
+    margin: 0;
+    padding-left: 7px;
+    width: 99%;
+    border-radius: .3em;
+    height: 35px;
+    
     font-size: 18px;
    
+}
+
+#fontButtons {
+    
+    
+    border-radius: .2em;
+    height: 35px;
+    width: 100%;
 }
 
 

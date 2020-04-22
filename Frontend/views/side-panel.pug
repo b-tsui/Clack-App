@@ -1,6 +1,6 @@
 div.panel
   div
-    button(type="button" id="button") 
+    button(type="button" id="modalButton") 
       div Workspace 
       div User
     div#modal 
@@ -9,9 +9,13 @@ div.panel
         img(src="https://spartacus-educational.com/00aristotle.jpg" id="avatar")
       div
         button(type="button" id="profile") View profile
-      div(id="preferences") Preferences
+      div
+        button(type="button" id="preferences") Preferences
       //- this needs to be changed to the variable workspace
-      div(id="sign-out-workspace") Sign out of workspace 
+      div
+        button(type="button" id="invitation") Invite People to Workspace
+      div
+        button(type="button" id="sign-out-workspace") Sign out of workspace 
   div.channels
     div
       button(type="button" id="channelDropdown") Channels
