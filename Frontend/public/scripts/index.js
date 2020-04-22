@@ -51,51 +51,6 @@ document.addEventListener("DOMContentLoaded", async (event) => {
         console.error(e);
     }
 
-    // Get the modal
-    let chatContainer = document.querySelector(".chat-container");
-    let modal = document.getElementById("modal");
-
-    // Get the button that opens the modal
-    let button = document.getElementById("button");
-
-    let channelDropdown = document.getElementById("channelDropdown");
-    let channels = document.querySelector(".channel");
-
-
-    // let dm = document.querySelector(".directMessage");
-    let dmDropdown = document.getElementById("dmDropdown");
-    let dms = document.querySelector(".dms");
-
-    button.addEventListener("click", event => {
-        modal.style.display = "block";
-        modal.removeAttribute("modal-transform");
-    });
-
-    const profile = document.getElementById("profile");
-    profile.addEventListener("click", event => {
-        modal.setAttribute("id", "modal-transform");
-        const editButton = document.createElement("button");
-        modal.appendChild(editButton)
-    })
-
-    chatContainer.addEventListener("click", e => {
-        if (modal.style.display === "block") {
-            modal.style.display = "none";
-        }
-    });
-
-    channelDropdown.addEventListener("click", e => {
-
-        channels.classList.toggle("channel");
-    });
-
-    dmDropdown.addEventListener("click", e => {
-
-        dms.classList.toggle("dms");
-    });
-
-
-
 
     const input = document.getElementById("messages")
     const broadcast = document.querySelector(".broadcast")
@@ -129,11 +84,15 @@ document.addEventListener("DOMContentLoaded", async (event) => {
         broadcast.innerHTML = "";
         let chatTimeStamp = `(${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()})`
         messageDisplay.innerHTML += `<div><strong>${data.sender}</strong> : ${data.message}    ${chatTimeStamp}</div>`;
+        
     });
 
     socket.on("typing", data => {
         broadcast.innerHTML = `<div><em>${data} is typing a message...</em</div>`;
+        //messageDisplay.scrollTop = messageDisplay.scrollHeight;
     });
+    
+    
 })
 
 

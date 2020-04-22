@@ -8,7 +8,17 @@
     margin: 0;
 }
 
-/* The Modal (background) */
+/* modal button */
+#modalButton {
+    width: 100%;
+    height: 60px;
+    text-align: left;
+    color: white;
+    font-size: 14px;
+    background-color: #87bdd8;
+    padding: 10px;
+}
+/* The Modal (profile card) */
 #modal {
   display: none; /* Hidden by default */
   /* position: fixed; Stay in place */
@@ -26,20 +36,123 @@
   
 }
 
-#button {
-    width: 100%;
-    height: 60px;
-    text-align: left;
-    color: white;
-    font-size: 14px;
-    background-color: #87bdd8;
-    padding: 10px;
+#modal-transform{
+    position: fixed; 
+    padding-top: 100px; /* Location of the box */
+    border: 1px solid lightgray;
+    right: 0px;
+    top:0px;
+    width: 30%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: white; /* Fallback color */
 }
+
+#avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: .3em;
+}
+
+#avatar-transform{
+    width: 100%;
+    height: 350px;
+}
+
+#profile {
+    width: 100%;
+    text-align: left;
+    height: 50px;
+    /* margin-top: 30px;
+    margin-bottom: 30px; */
+}
+
+#profile:hover{
+    background-color: blue;
+}
+
+#profile-transform{
+    display:none;
+}
+
+#textProfile{
+    position:fixed; 
+    top:20px;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+#preferences {
+    width: 100%;
+    text-align: left;
+    height: 50px;
+    /* margin-top: 30px;
+    margin-bottom: 30px; */
+}
+
+#preferences:hover{
+    background-color: blue;
+}
+
+#sign-out-workspace {
+    width: 100%;
+    text-align: left;
+    height: 50px;
+   
+}
+
+#sign-out-workspace:hover{
+    background-color: blue;
+    
+   
+}
+
+#invitation{
+    width: 100%;
+    text-align: left;
+    height: 50px; 
+}
+
+#invitation:hover{
+    background-color: blue;
+}
+
+#editButton
+{
+  height: 30px ; 
+  width: 120px;
+  margin: 30px
+}
+
+#editButton:hover{
+    background-color: blue;
+}
+
+#chatButton{
+    height: 30px ; 
+    width: 120px;
+    margin: 30px  
+}
+
+#chatButton:hover{
+background-color: blue;
+}
+
+/* .userName {
+margin-left: 40px;
+margin-top: center;
+} */
+
+/* links */
 
 .channel {
     display: none;
-   
     
+   
+}
+
+.channel:hover {
+    background-color: #87bdd8;
 }
 
 #channelDropdown {
@@ -67,49 +180,76 @@
     padding: 10px;
 }
 
-/* .userName {
-margin-left: 40px;
-margin-top: center;
-} */
-
-#avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: .3em;
+.links {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    display: block;
+    width: 100%; 
 }
 
-#profile {
-    width: 100%;
-    text-align: left;
-    margin-top: 15px;
+.links:hover {
+    background-color: #87bdd8;;
 }
 
-#preferences {
-    width: 100%;
-    text-align: left;
-    margin-top: 15px;
-}
+.editProfile {
+    display: none; /* Hidden by default */
+    /* position: fixed; Stay in place */
+    position: absolute;
+    top: 50px;
+    z-index: 3; 
+    padding: 50px;
+    margin: 50px;
+    width: 60%;  
+    height: 60%; 
+    border-radius: 1.5em;
+    background-color: white;
+  }
 
-#sign-out-workspace {
-    width: 100%;
-    text-align: left;
-    margin-top: 15px;
-}
+  .edit-profile-form{
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
+  }
 
-#profile:hover{
-    background-color: blue;
-}
+  .editProfileTransform{
+    background-color: rgb(231, 242, 255);
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14); 
+  }
 
-#modal-transform{
-    position: fixed; 
-    /* position: fixed;
-    /* z-index: 1; Sit on top */
-    padding-top: 100px; /* Location of the box */
-    border: 1px solid lightgray;
-    right: 0px;
-    top:0px;
-    width: 30%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: white; /* Fallback color */
-}
+  #btnSaveEdit{
+    cursor: pointer;
+        border-radius: 5em;
+        color: #fff;
+        background: linear-gradient(to right, rgb(78, 70, 201), rgb(91, 107, 255));
+        border: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-family: Arial, Helvetica, sans-serif, sans-serif;
+        margin-left: 35%;
+        font-size: 13px;
+        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04); 
+  }
+
+  
+  
+
+
+
+

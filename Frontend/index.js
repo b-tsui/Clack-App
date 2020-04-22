@@ -1,7 +1,7 @@
 const express = require('./node_modules/express');
 const path = require("path");
 const app = express();
-const socket = require('./node_modules/socket.io')
+const socket = require('./node_modules/socket.io');
 
 const PORT = 8080;
 
@@ -40,5 +40,13 @@ app.get('/sign-up', (req, res) => {
 
 app.get('/main', (req, res) => {
     res.render('main');
+});
+
+app.get('/general', (req, res) => {
+    res.render('general');
+});
+
+app.get('/help-requests', (req, res) => {
+    res.render('help-requests');
 });
 
