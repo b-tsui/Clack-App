@@ -7,7 +7,8 @@ div.panel
       div.userName Aristotle Modal
       div.modalContent
         img(src="https://spartacus-educational.com/00aristotle.jpg" id="avatar")
-      div(id="profile") View profile
+      div
+        button(type="button" id="profile") View profile
       div(id="preferences") Preferences
       //- this needs to be changed to the variable workspace
       div(id="sign-out-workspace") Sign out of workspace 
@@ -15,14 +16,14 @@ div.panel
     div
       button(type="button" id="channelDropdown") Channels
       div.channel
-        div: a(href="/general") # General
-        div: a(href="/help-request") # Help
-        div: a(href="/Add") + Add
+        div: a(href="/general" class="links") # General
+        div: a(href="/help-request" class="links") # Help
+        div: a(href="/Add" class="links") + Add
     
   div.directMessage
     div
       button(type="button" id="dmDropdown") Direct Message
       div.dms
         div: a(href="/" class="links") @ User1
-        div: a(href="/") @ User2
-        div: a(href="/invite") + Invite People
+        div: a(href="/" class="links") @ User2
+        div: a(href="/invite" class="links") + Invite People

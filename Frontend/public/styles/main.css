@@ -11,8 +11,6 @@ body {
   grid-template-columns: 17% 83%;
   grid-template-rows: 5% 95%;
   
-  
-  
 } 
 
 .nav {
@@ -30,77 +28,6 @@ body {
     font-style: italic;
 
 }
-
-.panel {
-    background-color: lightblue;
-    grid-column: 1 / 2;
-    grid-row: 2;
-    width: 100%;
-    height: 100%;
-    
-    margin: 0;
-}
-
-/* The Modal (background) */
-#modal {
-  display: none; /* Hidden by default */
-  /* position: fixed; Stay in place */
-  position: fixed;
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  border: 1px solid lightgray;
-  border-radius: .5em;
-  left: 13px;
-  top: 83px;
-  width: 20%; /* Full width */
-  height: 60%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: white; /* Fallback color */
-  
-}
-
-#button {
-    width: 100%;
-    height: 60px;
-    text-align: left;
-    color: white;
-    font-size: 14px;
-    background-color: #87bdd8;
-    padding: 10px;
-}
-
-.channel {
-    display: none;
-   
-    
-}
-
-#channelDropdown {
-    width: 100%;
-    height: 50%;
-    text-align: left;
-    color: white;
-    font-size: 14px;
-    background-color: #87bdd8;
-    padding: 10px;
-}
-
-.dms {
-    display: none;
-    
-}
-
-#dmDropdown {
-    width: 100%;
-    height: 50%;
-    text-align: left;
-    color: white;
-    font-size: 14px;
-    background-color: #87bdd8;
-    padding: 10px;
-}
-
-
 
 .chat-container {
     grid-column: 2;
@@ -163,33 +90,5 @@ body {
    
 }
 
-/* .userName {
-margin-left: 40px;
-margin-top: center;
-} */
-
-#avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: .3em;
-}
-
-#profile {
-    width: 100%;
-    text-align: left;
-    margin-top: 15px;
-}
-
-#preferences {
-    width: 100%;
-    text-align: left;
-    margin-top: 15px;
-}
-
-#sign-out-workspace {
-    width: 100%;
-    text-align: left;
-    margin-top: 15px;
-}
 
 

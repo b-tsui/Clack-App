@@ -62,7 +62,15 @@ document.addEventListener("DOMContentLoaded", async (event) => {
 
     button.addEventListener("click", event => {
         modal.style.display = "block";
+        modal.removeAttribute("modal-transform");
     });
+
+    const profile = document.getElementById("profile");
+    profile.addEventListener("click", event =>{
+        modal.setAttribute("id", "modal-transform");
+        const editButton = document.createElement("button");
+        modal.appendChild(editButton)
+    })
 
     chatContainer.addEventListener("click", e => {
         if (modal.style.display === "block") {
@@ -80,7 +88,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
         dms.classList.toggle("dms");
     });
 
-    const profile = document.getElementById("profile");
+    
 
 
     const input = document.getElementById("messages")
