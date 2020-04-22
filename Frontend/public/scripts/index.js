@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
         messagesContainer.innerHTML += messagesHTML.join("");
 
         //grabbing channels for side-panel
-        const allChannels
+
     }
     catch (e) {
         console.error(e);
@@ -84,15 +84,15 @@ document.addEventListener("DOMContentLoaded", async (event) => {
         broadcast.innerHTML = "";
         let chatTimeStamp = `(${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()})`
         messageDisplay.innerHTML += `<div><strong>${data.sender}</strong> : ${data.message}    ${chatTimeStamp}</div>`;
-        
+
     });
 
     socket.on("typing", data => {
         broadcast.innerHTML = `<div><em>${data} is typing a message...</em</div>`;
         //messageDisplay.scrollTop = messageDisplay.scrollHeight;
     });
-    
-    
+
+
 })
 
 
