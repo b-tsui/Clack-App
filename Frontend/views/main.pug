@@ -3,20 +3,26 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        
         title Document
         link(rel="stylesheet", type="text/css", href="./styles/main.css")
         link(rel="stylesheet", type="text/css", href="./styles/side-panel.css")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js")
     body
       div.grid-container
         div.nav Clack
         //- /side panel/
-        include side-panel.pug
+        include includes/side-panel.pug
+          block content
         div.chat-container
-          div.chatWin
+          div.chatWin    
             div.texts
             div.broadcast
           div.messageField
             input(type="text" id="messages" placeholder="Type something here...")
-            nav(id="fontButtons")
+            include includes/icon-bar.pug       
       script(src="./scripts/index.js")
+      script(src="./scripts/side-panel.js")
+
+      
