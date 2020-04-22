@@ -1,12 +1,12 @@
-const express = require('express');
+const express = require('./node_modules/express');
 const path = require("path");
 const app = express();
-const socket = require('socket.io')
+const socket = require('./node_modules/socket.io')
 
-const port = 8080;
+const PORT = 8080;
 
-const server = app.listen(port, () => {
-    console.log(`Server listening on port ${port}`);
+const server = app.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}`);
 });
 
 app.set('view engine', 'pug');

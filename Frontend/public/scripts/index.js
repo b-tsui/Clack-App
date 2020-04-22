@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     let channelDropdown = document.getElementById("channelDropdown");
     let channels = document.querySelector(".channel");
 
-    
+
     // let dm = document.querySelector(".directMessage");
     let dmDropdown = document.getElementById("dmDropdown");
     let dms = document.querySelector(".dms");
@@ -71,17 +71,17 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     });
 
     channelDropdown.addEventListener("click", e => {
-        
+
         channels.classList.toggle("channel");
     });
 
     dmDropdown.addEventListener("click", e => {
-        
+
         dms.classList.toggle("dms");
     });
-    
+
     const profile = document.getElementById("profile");
-    
+
 
     const input = document.getElementById("messages")
     const broadcast = document.querySelector(".broadcast")

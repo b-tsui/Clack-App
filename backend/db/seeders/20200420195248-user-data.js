@@ -33,7 +33,7 @@ module.exports = {
     const channels = await queryInterface.bulkInsert('Channels', [
       {
         userId: 2,
-        name: ':poop:',
+        name: 'Main Channel',
         isDM: false,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -79,14 +79,14 @@ module.exports = {
     );
     return queryInterface.bulkInsert('Messages', [
       {
-        message: "This is a test message from brandon to poop chat",
+        message: "This is a test message from brandon to main chat",
         userId: 2,
         channelId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        message: "Test message from lisa to poop",
+        message: "Test message from lisa to the main",
         userId: 1,
         channelId: 1,
         createdAt: new Date(),

@@ -4,7 +4,7 @@ const { check } = require("express-validator");
 const { getUserToken, requireAuth } = require("../auth");
 const db = require("../db/models");
 
-const { User } = db;
+const { User, ChannelUser } = db;
 
 const router = express.Router();
 const { asyncHandler, handleValidationErrors } = require("../utils");
@@ -51,7 +51,7 @@ router.post(
         const { fullName, email, password } = req.body;
         const hashedPassword = await bcrypt.hash(password, 10);
         const user = await User.create({ fullName, email, hashedPassword });
-
+        await ChannelUser.create({ userId: user.dataValues.id, channelId: 1 })
         const token = getUserToken(user);
         res.status(201).json({
             user: { id: user.id },
@@ -75,7 +75,7 @@ router.post("/token", validateEmailAndPassword, asyncHandler(async (req, res, ne
         return next(err);
     }
     const token = getUserToken(user);
-    res.json({ token, user: { id: user.id } });
+    res.json({ token, user: { id: user.id, name: user.fullName } });
 }));
 
 router.put('/:id(\\d+)', handleValidationErrors, asyncHandler(async (req, res, next) => {

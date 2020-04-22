@@ -29,9 +29,18 @@ router.get('/:channelId/members', asyncHandler(async (req, res) => {
 router.get('/:channelId/messages', asyncHandler(async (req, res) => {
     const channelId = parseInt(req.params.channelId, 10);
     const channelMessages = await Channel.findAll({
-        include: [{ model: Message, attributes: ["message", "userId", "createdAt"] }],
-        where: { id: channelId }
+        include: [{
+            model: Message, attributes: ["message", "userId", "createdAt"],
+            include: [{ model: User, attributes: ["fullName"] }]
+        }],
+        where: { id: channelId },
+        order: [[Message, 'createdAt']]
     });
+    // const channelMessages = await Channel.findAll({
+    //     include: [{ model: Message, attributes: ["message", "userId", "createdAt"] }],
+    //     where: { id: channelId },
+    //     order: [[Message, 'createdAt']]
+    // });
     const [{ Messages }] = channelMessages;
     res.json({ Messages });
 }));
