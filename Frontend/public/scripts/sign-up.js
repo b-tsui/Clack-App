@@ -8,8 +8,17 @@ signUpForm.addEventListener("submit", async (e) => {
     const fullName = formData.get("fullName");
     const email = formData.get("email");
     const password = formData.get("password");
+    const confirmPassword = formData.get("confirmPassword");
     const body = { fullName, email, password };
     try {
+        if (password !== confirmPassword) {
+            let passwordError = new Error;
+            passwordError.name = "Password Error"
+            passwordError.message = "Passwords must match"
+            passwordError.status = "passwordError";
+            throw passwordError;
+        }
+
         const res = await fetch("http://localhost:8000/users", {
             method: "POST",
             body: JSON.stringify(body),

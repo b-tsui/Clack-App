@@ -1,16 +1,12 @@
 extends layout.pug
 
 block content
-    
-    div(class="log-in-container")
-      div(class="errors-container")
-      
-      form(class="log-in-form")
-        h2 Please provide your workspace
-        label(for="workspace") Enter your workspace URL
-        input(type="text" id="workspace" name="")
-        h2 Log-in to your workspace
+    div.mainLogin
+      div.errors-container
+      h2.sign(align="center") Log In
+      form.log-in-form
         include includes/auth-form-fields
-        button.btn.btn-primary(type='submit') Log In
-      a(href='/sign-up') Don't have an account? Sign up here.
+        button.submit(type='submit') Log In
+      div.signLink(align="center")
+        a(href='/sign-up') Don't have an account? Sign up here.
     script(type="module" src="scripts/log-in.js")    
