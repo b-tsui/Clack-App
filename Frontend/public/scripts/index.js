@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     let modal = document.getElementById("modal");
 
     // Get the button that opens the modal
-    let button = document.getElementById("button");
+    let modalButton = document.getElementById("modalButton");
 
     let channelDropdown = document.getElementById("channelDropdown");
     let channels = document.querySelector(".channel");
@@ -60,16 +60,33 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     let dmDropdown = document.getElementById("dmDropdown");
     let dms = document.querySelector(".dms");
 
-    button.addEventListener("click", event => {
+    modalButton.addEventListener("click", event => {
         modal.style.display = "block";
         modal.removeAttribute("modal-transform");
     });
-
+    
+    //update the position/style for the profile pop-up to be on the right side once click on the 'view profile'
     const profile = document.getElementById("profile");
     profile.addEventListener("click", event =>{
         modal.setAttribute("id", "modal-transform");
+        //add edit button for the profile
         const editButton = document.createElement("button");
-        modal.appendChild(editButton)
+        editButton.setAttribute("id", "editButton")
+        const textEditButton = document.createTextNode("Edit profile");
+        editButton.appendChild(textEditButton);
+        modal.appendChild(editButton);
+        //add message button to chat with the user
+        const chatButton = document.createElement("button");
+        chatButton.setAttribute("id", "chatButton")
+        const textChatButton = document.createTextNode("Message");
+        chatButton.appendChild(textChatButton);
+        modal.appendChild(chatButton);
+        //styling img for the user to be bigger by adding an id and styling it on side-panel.css
+        const avatar = document.getElementById("avatar");
+        avatar.setAttribute("id", "avatar-transform")
+        //removing the profile button 
+        profile.setAttribute("id", "profile-transform");
+        
     })
 
     chatContainer.addEventListener("click", e => {
