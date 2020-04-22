@@ -1,6 +1,7 @@
 import { handleErrors } from "./utils.js";
 
 const logInForm = document.querySelector(".log-in-form");
+const demoLogIn = document.getElementById("demoUser");
 
 logInForm.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -33,3 +34,33 @@ logInForm.addEventListener("submit", async (e) => {
         handleErrors(err);
     }
 });
+
+demoLogIn.addEventListener("click", async (e) => {
+    try {
+        const res = await fetch("http://localhost:8000/users/token", {
+            method: "POST",
+            body: JSON.stringify({
+                email: "demo@demo.com",
+                password: "demo"
+            }),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+        if (!res.ok) {
+            throw res;
+        }
+        const {
+            token,
+            user: { id, name },
+        } = await res.json();
+        // storage access_token in localStorage:
+        localStorage.setItem("CLACK_CURRENT_USER_FULLNAME", name)
+        localStorage.setItem("CLACK_ACCESS_TOKEN", token);
+        localStorage.setItem("CLACK_CURRENT_USER_ID", id);
+        // redirect to home page to see all tweets:
+        window.location.href = "/main";
+    } catch (err) {
+        handleErrors(err);
+    }
+})

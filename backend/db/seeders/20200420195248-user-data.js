@@ -14,6 +14,13 @@ module.exports = {
     */
     const users = await queryInterface.bulkInsert('Users', [
       {
+        fullName: 'Demo User',
+        email: 'demo@demo.com',
+        hashedPassword: bcrypt.hashSync('demo'),
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
         fullName: 'Lisa Kang',
         email: 'test@test.com',
         hashedPassword: bcrypt.hashSync('test1'),
@@ -39,7 +46,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        userId: 1,
+        userId: 3,
         name: ';)',
         isDM: true,
         createdAt: new Date(),
@@ -73,6 +80,18 @@ module.exports = {
         channelId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
+      },
+      {
+        userId: 3,
+        channelId: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        userId: 3,
+        channelId: 2,
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
     ],
       { returning: true }
@@ -80,28 +99,28 @@ module.exports = {
     return queryInterface.bulkInsert('Messages', [
       {
         message: "This is a test message from brandon to main chat",
-        userId: 2,
+        userId: 3,
         channelId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         message: "Test message from lisa to the main",
-        userId: 1,
+        userId: 2,
         channelId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         message: "hey dude",
-        userId: 1,
+        userId: 2,
         channelId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         message: "I like poop",
-        userId: 2,
+        userId: 3,
         channelId: 2,
         createdAt: new Date(),
         updatedAt: new Date()

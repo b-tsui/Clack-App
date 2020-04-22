@@ -7,6 +7,8 @@ block content
       form.log-in-form
         include includes/auth-form-fields
         button.submit(type='submit') Log In
+      div.demoButton
+        button.submit(id="demoUser") Demo
       div.signLink(align="center")
         a(href='/sign-up') Don't have an account? Sign up here.
     script(type="module" src="scripts/log-in.js")    
