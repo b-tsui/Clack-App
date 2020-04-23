@@ -1,3 +1,4 @@
+import { emojiTranslate, handleErrors } from "./utils.js";
 document.addEventListener("DOMContentLoaded", async (event) => {
 
     //uses a fetch on '/' to grab dynamic port that heroku provides
@@ -85,7 +86,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
 
     }
     catch (e) {
-        console.error(e);
+        handleErrors(e);
     }
 
     //const messageDisplay = document.querySelector(".messageDisplay");
@@ -109,7 +110,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
                 })
             }
             catch (e) {
-                console.error(e);
+                handleErrors(e);
             }
 
             //Emits socket signal for chat
@@ -148,59 +149,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
         broadcast.innerHTML = `<div><em>${data} is typing a message...</em</div>`;
     });
 
-    //-----------------------------------------------------------------------------------
-    // Function that takes in a message, translate it into emoji letters, and returns that new message
-    function emojiTranslate(message) {
-        const alphabet = {
-            a: ["🅰️"],
-            b: ["🅱️"],
-            c: ["©️"],
-            d: ["↩️"],
-            e: ["📧"],
-            f: ["🎏"],
-            g: ["ⓖ"],
-            h: ["♓"],
-            i: ["ℹ️"],
-            j: ["ʝ"],
-            k: ["ⓚ"],
-            l: ["👢"],
-            m: ["Ⓜ️"],
-            n: ["ⓝ"],
-            o: ["🅾️"],
-            p: ["🅿️"],
-            q: ["🔍"],
-            r: ["®️"],
-            s: ["💲"],
-            t: ["✝️"],
-            u: ["⛎"],
-            v: ["♈"],
-            w: ["〰️"],
-            x: ["❌"],
-            y: ["✌🏻"],
-            z: ["💤"],
-            1: ["1️⃣"],
-            2: ["2️⃣"],
-            3: ["3️⃣"],
-            4: ["4️⃣"],
-            5: ["5️⃣"],
-            6: ["6️⃣"],
-            7: ["7️⃣"],
-            8: ["8️⃣"],
-            9: ["9️⃣"],
-            0: ["0️⃣"],
-            "?": ["❓"],
-            "!": ["❗️"],
-            " ": [""],
-            ".": ["❀"]
-        };
-        return message.toLowerCase().split('').map(char => {
-            if (char in alphabet) {
-                return alphabet[char];
-            } else {
-                return char;
-            }
-        }).join('')
-    }
+
 
     //When a user clicks on the emoji view button, toggles the classlists for message
     //spans and the button itself

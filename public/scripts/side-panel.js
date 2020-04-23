@@ -42,7 +42,7 @@ profile.addEventListener("click", event => {
     const textChatButton = document.createTextNode("Message");
     chatButton.appendChild(textChatButton);
     modal.appendChild(chatButton);
-   
+
     //styling img for the user to be bigger by adding an id and styling it on side-panel.css
     const avatar = document.getElementById("avatar");
     avatar.setAttribute("id", "avatar-transform")
@@ -50,15 +50,15 @@ profile.addEventListener("click", event => {
     profile.setAttribute("id", "profile-transform");
 
     //redirect the user to the edit page/pop-up for the profile
-    
+
     editButton.addEventListener("click", event => {
         editProfile.style.display = "block";
         let gridContainer = document.querySelector(".grid-container");
         gridContainer.classList.add("editProfileTransform")
         editProfileTransform.style.display = "block"
-      
+
     })
-    
+
 
     //remove the profile pop-up from the page
     chatContainer.addEventListener("click", e => {
@@ -67,22 +67,22 @@ profile.addEventListener("click", event => {
         }
     });
 
-     // //add closing button to close the profile edit pop-up
-     const closeProfileButton = document.createElement("button");
-     closeProfileButton.setAttribute("id", "closeProfileButton")
-     const textCloseButton = document.createTextNode("X");
-     closeProfileButton.appendChild(textCloseButton);
-     modal.appendChild(closeProfileButton);
-     // //closing the profile
-     closeProfileButton.addEventListener("click", event => {
-         modal.style.display = "none";
-     });
+    // //add closing button to close the profile edit pop-up
+    const closeProfileButton = document.createElement("button");
+    closeProfileButton.setAttribute("id", "closeProfileButton")
+    const textCloseButton = document.createTextNode("X");
+    closeProfileButton.appendChild(textCloseButton);
+    modal.appendChild(closeProfileButton);
+    // //closing the profile
+    closeProfileButton.addEventListener("click", event => {
+        modal.style.display = "none";
+    });
 
 })
 
 //closing the edit profile pop-up with X button
 const closeEditProfile = document.querySelector(".closeEditProfile")
-closeEditProfile.addEventListener("click", event =>{
+closeEditProfile.addEventListener("click", event => {
     editProfile.style.display = "none";
 })
 //remove the profile pop-up from the page
