@@ -49,3 +49,4 @@ app.get('/help-requests', (req, res) => {
     res.render('help-requests');
 });
 
+module.exports = { port };
