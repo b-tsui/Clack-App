@@ -6,7 +6,7 @@ const socket = require('./node_modules/socket.io');
 const PORT = 49710 //heroku default
 
 const server = app.listen(PORT, () => {
-    console.log(`Listening for requests on port ${port}...`);
+    console.log(`Listening for requests on port ${PORT}...`);
 });
 
 app.set('view engine', 'pug');

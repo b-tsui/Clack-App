@@ -1,4 +1,4 @@
-const socket = io.connect("http://localhost:8080");
+const socket = io.connect("http://localhost:49710");
 
 document.addEventListener("DOMContentLoaded", async (event) => {
     //grabbing userid from local storage
