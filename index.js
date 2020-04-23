@@ -3,6 +3,8 @@ const path = require("path");
 const app = express();
 const socket = require('./node_modules/socket.io');
 
+//if heroku is serving, set port to env.PORT that heroku passes
+//otherwise sets port to 8080 for local dev
 var port = Number.parseInt(process.env.PORT, 10) || 8080;
 const server = app.listen(port, () => {
     console.log(`Listening for requests on port ${port}...`);
@@ -11,6 +13,7 @@ const server = app.listen(port, () => {
 app.set('view engine', 'pug');
 app.use(express.static(path.join(__dirname, 'public')));
 
+//Creates the server side socket connection to listen for signals and emit signals
 const io = socket(server);
 io.on('connection', (socket) => {
     console.log('Socket Connection Established!!!', socket.id);
@@ -19,12 +22,11 @@ io.on('connection', (socket) => {
 
     });
     socket.on('typing', data => {
-
         socket.broadcast.emit('typing', data);
     });
 });
 
-
+//Defines all the frontend routes that will render its respective pug page
 app.get('/', (req, res) => {
     res.render('splash');
 });
@@ -48,5 +50,3 @@ app.get('/general', (req, res) => {
 app.get('/help-requests', (req, res) => {
     res.render('help-requests');
 });
-
-module.exports = { port };

@@ -216,6 +216,9 @@ input:checked + .slider:before {
   background-color: lightblue;
 }
 
+.hidden{
+  display: none;
+}
 
 
 
