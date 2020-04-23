@@ -1,16 +1,23 @@
 import { handleErrors } from "./utils.js";
 
+//Grabs the sign up form element
 const signUpForm = document.querySelector(".sign-up-form");
+
 
 signUpForm.addEventListener("submit", async (e) => {
     e.preventDefault();
+
+    //Grabs the form input values
     const formData = new FormData(signUpForm);
     const fullName = formData.get("fullName");
     const email = formData.get("email");
     const password = formData.get("password");
     const confirmPassword = formData.get("confirmPassword");
     const body = { fullName, email, password };
+
     try {
+
+        //If password and confirm password fields do not match, throws error
         if (password !== confirmPassword) {
             let passwordError = new Error;
             passwordError.name = "Password Error"
@@ -19,6 +26,8 @@ signUpForm.addEventListener("submit", async (e) => {
             throw passwordError;
         }
 
+        //If there are no problems with signing up, makes a post request to create
+        //new user in the database
         const res = await fetch("https://clackbackend.herokuapp.com/users", {
             method: "POST",
             body: JSON.stringify(body),
@@ -26,17 +35,22 @@ signUpForm.addEventListener("submit", async (e) => {
                 "Content-Type": "application/json",
             },
         });
+
         if (!res.ok) {
             throw res;
         }
+
         const {
             token,
             user: { id },
         } = await res.json();
-        // storage access_token in localStorage:
+
+        // Stores fullName, access_token, user_id in localStorage:
         localStorage.setItem("CLACK_CURRENT_USER_FULLNAME", fullName);
         localStorage.setItem("CLACK_ACCESS_TOKEN", token);
         localStorage.setItem("CLACK_CURRENT_USER_ID", id);
+
+        //Redirects user to main channel chat
         window.location.href = "/main";
     } catch (err) {
         handleErrors(err);
