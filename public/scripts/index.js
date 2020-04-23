@@ -58,11 +58,11 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     const broadcast = document.querySelector(".broadcast");
     //const messageDisplay = document.querySelector(".messageDisplay");
 
-    
+
 
     input.addEventListener('keypress', async (e) => {
         if (e.key === 'Enter') {
-            
+
             try {
                 const message = await fetch(`https://clackbackend.herokuapp.com/channels/1/messages`, {
                     method: "POST",
@@ -79,16 +79,16 @@ document.addEventListener("DOMContentLoaded", async (event) => {
             catch (e) {
                 console.error(e);
             }
-            
+
             socket.emit("chat", { message: input.value, sender: name });
-            
+
             input.value = "";
-            
+
         }
     });
     input.addEventListener("keypress", event => {
         socket.emit("typing", "test");
-        
+
     });
     socket.on("chat", data => {
         broadcast.innerHTML = "";
@@ -100,16 +100,16 @@ document.addEventListener("DOMContentLoaded", async (event) => {
         chatWin.appendChild(div); // slack puts the texts on the bottom and it stacks underneath pushing old one higher up
         div.scrollIntoView(false); // .scrollIntoView() = .scrollIntoView(true) - all work the same in the case with appendChild() vs prepend()
         // messageDisplay.innerHTML += `<div><strong>${data.sender}</strong> : ${data.message}    ${chatTimeStamp}</div>`;
-        
+
     });
 
     socket.on("typing", data => {
         broadcast.innerHTML = `<div><em>${data} is typing a message...</em</div>`;
-        
-        
+
+
     });
 
-    
+
 })
 
 
