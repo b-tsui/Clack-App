@@ -3,8 +3,9 @@ const path = require("path");
 const app = express();
 const socket = require('./node_modules/socket.io');
 
-var port = Number.parseInt(process.env.PORT, 10) || 8080;
-const server = app.listen(port, () => {
+const PORT = 49710 //heroku default
+
+const server = app.listen(PORT, () => {
     console.log(`Listening for requests on port ${port}...`);
 });
 
