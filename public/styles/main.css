@@ -52,17 +52,17 @@ body {
     height: 730px;
     background-color: white;
     font-size: 18px;
-    overflow-y: scroll;
+    overflow: auto; /* before had it to overflow-y: scroll */
     
 }
 
-.texts {
+.messageDisplay {
     
     padding: 15px;
     height: 665px;
     background-color: white;
     font-size: 18px;
-    overflow-y: scroll,
+    /* overflow-y: scroll, */
 }
 
 .broadcast {
