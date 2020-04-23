@@ -3,10 +3,9 @@ const path = require("path");
 const app = express();
 const socket = require('./node_modules/socket.io');
 
-const PORT = 49710 //heroku default
-
-const server = app.listen(PORT, () => {
-    console.log(`Listening for requests on port ${PORT}...`);
+var port = Number.parseInt(process.env.PORT, 10) || 49710;
+const server = app.listen(port, () => {
+    console.log(`Listening for requests on port ${port}...`);
 });
 
 app.set('view engine', 'pug');
