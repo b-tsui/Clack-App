@@ -3,7 +3,7 @@ const path = require("path");
 const app = express();
 const socket = require('./node_modules/socket.io');
 
-var port = Number.parseInt(process.env.PORT, 10) || 49710;
+var port = Number.parseInt(process.env.PORT, 10) || 8080;
 const server = app.listen(port, () => {
     console.log(`Listening for requests on port ${port}...`);
 });

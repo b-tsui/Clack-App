@@ -1,4 +1,5 @@
-const socket = io.connect("http://localhost:49710");
+var port = Number.parseInt(process.env.PORT, 10) || 8080;
+const socket = io.connect(`https://clackapp.herokuapp.com:${port}`);
 
 document.addEventListener("DOMContentLoaded", async (event) => {
     //grabbing userid from local storage
