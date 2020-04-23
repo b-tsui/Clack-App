@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
             }
         })
         const { Messages } = await allMessages.json()
-        const messagesContainer = document.querySelector(".texts");
+        const messagesContainer = document.querySelector(".messageDisplay");
         const messagesHTML = Messages.map(
             ({ message, User: { fullName }, createdAt }) => `
 			<div class="message">
