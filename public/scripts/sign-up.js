@@ -19,7 +19,7 @@ signUpForm.addEventListener("submit", async (e) => {
             throw passwordError;
         }
 
-        const res = await fetch("http://localhost:8000/users", {
+        const res = await fetch("https://clackbackend.herokuapp.com/users", {
             method: "POST",
             body: JSON.stringify(body),
             headers: {

@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     const userId = localStorage.getItem("CLACK_CURRENT_USER_ID");
     const name = localStorage.getItem("CLACK_CURRENT_USER_FULLNAME");
     try {
-        const user = await fetch(`http://localhost:8000/users/${userId}`, {
+        const user = await fetch(`https://clackbackend.herokuapp.com/users/${userId}`, {
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${localStorage.getItem('CLACK_ACCESS_TOKEN')}`
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
             return
         }
         //grabbing messages for main page
-        const allMessages = await fetch(`http://localhost:8000/channels/1/messages`, {
+        const allMessages = await fetch(`https://clackbackend.herokuapp.com/channels/1/messages`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('CLACK_ACCESS_TOKEN')}`
             }
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     input.addEventListener('keypress', async (e) => {
         if (e.key === 'Enter') {
             try {
-                const message = await fetch(`http://localhost:8000/channels/1/messages`, {
+                const message = await fetch(`https://clackbackend.herokuapp.com/channels/1/messages`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

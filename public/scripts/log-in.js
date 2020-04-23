@@ -10,7 +10,7 @@ logInForm.addEventListener("submit", async (e) => {
     const password = formData.get("password");
     const body = { email, password };
     try {
-        const res = await fetch("http://localhost:8000/users/token", {
+        const res = await fetch("https://clackbackend.herokuapp.com/users/token", {
             method: "POST",
             body: JSON.stringify(body),
             headers: {
@@ -38,7 +38,7 @@ logInForm.addEventListener("submit", async (e) => {
 
 demoLogIn.addEventListener("click", async (e) => {
     try {
-        const res = await fetch("http://localhost:8000/users/token", {
+        const res = await fetch("https://clackbackend.herokuapp.com/users/token", {
             method: "POST",
             body: JSON.stringify({
                 email: "demo@demo.com",
