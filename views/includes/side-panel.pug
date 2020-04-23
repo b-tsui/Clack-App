@@ -22,8 +22,15 @@ div.panel
       div.channel
         div: a(href="/general" class="links") # General
         div: a(href="/help-requests" class="links") # Help-Requests
-        div: a(href="/sign-up" class="links") + Add
-    
+        div#addChannel: a(href="" class="links") + Add
+          div#addChannelModal
+            div#addChannelForm
+              form.form
+                div  
+                  label(for="name") Enter Name 
+                  input#form-input(type="text", name="name", placeholder="")   
+                div
+                  button#btn(type='submit') Save changes
   div.directMessage
     div
       button(type="button" id="dmDropdown") Direct Message
@@ -32,12 +39,17 @@ div.panel
         div: a(href="/log-in" class="links") @ User2
         div: a(href="/sign-up" class="links") + Invite People
   
+  
 div.editProfile
-  form.edit-profile-form
-    include edit-profile.pug
-  div#btnSaveEdit
-    button(type='submit') Save changes
-  div#btnCancelEdit
-    button(type='cancel') Cancel
-  div.editProfileImg
-    button(type='submit') Update Photo
+  div.edit-profile-form
+    div#edit Edit Your Profile
+    form.form
+      include edit-profile.pug
+      div.btns
+        button#btn(type='submit') Save changes
+        button#btn(type='cancel') Cancel
+    button.closeEditProfile(type='button') x
+    div#editProfileImg
+      div#pict
+        img(src="https://spartacus-educational.com/00aristotle.jpg") 
+      button#btnpict(type='submit') Update Photo

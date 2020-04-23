@@ -146,9 +146,7 @@ margin-top: center;
 /* links */
 
 .channel {
-    display: none;
-    
-   
+    display: none; 
 }
 
 .channel:hover {
@@ -192,22 +190,93 @@ margin-top: center;
     background-color: #87bdd8;;
 }
 
+/* .editProfileTransform{
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+  
+} */
+
 .editProfile {
-    display: none; /* Hidden by default */
+    display: none; 
     /* position: fixed; Stay in place */
     position: absolute;
-    top: 50px;
-    z-index: 3; 
+    /* top: 50px; */
+    z-index: 1; 
     padding: 50px;
-    margin: 50px;
-    width: 60%;  
-    height: 60%; 
-    border-radius: 1.5em;
-    background-color: white;
+    /* margin: 50px; */
+    /* width: 60%;  
+    height: 80%;  */
+    width: 100%;
+    height: 100%;
+    /* border-radius: 1.5em; */
+    /* background-color: #fefefe; */
+    background-color: rgba(0, 0, 0);
+    background-color: rgba(0, 0, 0, .7);
   }
 
   .edit-profile-form{
-    width: 76%;
+    
+    width: 80%;
+    height: 80%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    display: block;
+    letter-spacing: 1px;
+    
+    background: rgba(136, 126, 126, 0.04);
+    position: relative;
+    left: 20px;
+    padding: 10px 20px;
+    /* border: none;
+    border-radius: 20px; */
+    /* box-sizing: border-box; */
+    /* border: 2px solid rgba(0, 0, 0, 0.02); */
+    background-color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
+  }
+
+  
+
+
+  #editProfileImg{
+   position: absolute;
+   top: 60px;
+   right: 10px;
+   width: 30%;
+   height: 80%;
+   display: block;
+  }
+
+  #btn {
+    cursor: pointer;
+      color: #fff;
+      background: linear-gradient(to right, rgb(78, 70, 201), rgb(91, 107, 255));
+      border: 0;
+      padding-left: 40px;
+      padding-right: 40px;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      margin: 15px;
+      /* position: absolute;
+      bottom: 30px; */
+      font-family: Arial, Helvetica, sans-serif, sans-serif;
+      font-size: 13px;
+      box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+  }
+
+  #form-input{
+    width: 50%;
     color: rgb(38, 50, 56);
     font-weight: 700;
     font-size: 14px;
@@ -219,36 +288,98 @@ margin-top: center;
     outline: none;
     box-sizing: border-box;
     border: 2px solid rgba(0, 0, 0, 0.02);
-    margin-bottom: 50px;
-    margin-left: 46px;
+    /* margin-left: 46px; */
     text-align: center;
-    margin-bottom: 27px;
+    /* margin-bottom: 27px; */
+    margin: 12px;
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
+
+  }
+
+  #pict{
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: 30px;
+      right: 200px
+  }
+
+  #edit{
+      position: absolute;
+      left: 40px;
+      top: 40px;
+      bottom: 20px;
+      text-align: left;
+      font-size: large;
+      font-weight: 700;
+      /* margin-bottom: 20px; */
+  }
+
+
+  #closeProfileButton{
+    position: absolute;
+    top: 10px;
+    right: 10px
+  }
+  
+  .closeEditProfile{
+      position: absolute;
+      top: 10px;
+      right: 10px
+  }
+
+  .form{
+      position: absolute;
+      top: 60px;
+    width: 70%;
+    height:70%;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+  }
+
+  #btnpict{
+      height: 30px;
+      width: 120px;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(to right, rgb(78, 70, 201), rgb(91, 107, 255));
+    border: 0;
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
+    font-size: 13px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    position: absolute;
+      bottom: 120px;
+      right: 110px
+  }
+
+  #addChannelModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  }
+
+  #addChannelForm {
+    width: 80%;
+    height: 80%;
+    font-weight: 700;
+    font-size: 14px;
+    display: block;
+    letter-spacing: 1px;
+    position: relative;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: white;
+    text-align: center;
     font-family: Arial, Helvetica, sans-serif, sans-serif;
   }
-
-  .editProfileTransform{
-    background-color: rgb(231, 242, 255);
-    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14); 
-  }
-
-  #btnSaveEdit{
-    cursor: pointer;
-        border-radius: 5em;
-        color: #fff;
-        background: linear-gradient(to right, rgb(78, 70, 201), rgb(91, 107, 255));
-        border: 0;
-        padding-left: 40px;
-        padding-right: 40px;
-        padding-bottom: 10px;
-        padding-top: 10px;
-        font-family: Arial, Helvetica, sans-serif, sans-serif;
-        margin-left: 35%;
-        font-size: 13px;
-        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04); 
-  }
-
-  
-  
 
 
 
