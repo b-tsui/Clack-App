@@ -15,8 +15,8 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     const input = document.getElementById("messages");
     const broadcast = document.querySelector(".broadcast");
 
-    //Grabs bold button from icon bar to test emoji toggling
-    const boldTag = document.getElementById("bold");
+    //Grabs emoji switch button from navbar to test toggle emojiView
+    const emojiSwitch = document.getElementById("emoji-switch");
 
 
     try {
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
         div.style.paddingBottom = "10px";
 
         //Changes display view of messages to show either emoji or original:
-        if (boldTag.classList.contains("emojiView")) {
+        if (emojiSwitch.classList.contains("emojiView")) {
             div.innerHTML = `<div class="message-text"><strong>${data.sender}</strong> : <span class="message hidden">${data.message}</span><span class="emojiMessage">${emojiTranslate(data.message)}</span>   ${chatTimeStamp}</div>`;
         } else {
             div.innerHTML = `<div class="message-text"><strong>${data.sender}</strong> : <span class="message">${data.message}</span><span class="emojiMessage hidden">${emojiTranslate(data.message)}</span>   ${chatTimeStamp}</div>`;
@@ -204,8 +204,8 @@ document.addEventListener("DOMContentLoaded", async (event) => {
 
     //When a user clicks on the emoji view button, toggles the classlists for message
     //spans and the button itself
-    boldTag.addEventListener('click', e => {
-        boldTag.classList.toggle("emojiView")//this is how socket knows if emojiView is on or not
+    emojiSwitch.addEventListener('change', e => {
+        emojiSwitch.classList.toggle("emojiView")//this is how socket knows if emojiView is on or not
 
         const allEmojiMessageSpans = document.querySelectorAll(".emojiMessage");
         const allMessageSpans = document.querySelectorAll('.message');
