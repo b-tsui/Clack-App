@@ -6,6 +6,11 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     //grabbing userid from local storage
     const userId = localStorage.getItem("CLACK_CURRENT_USER_ID");
     const name = localStorage.getItem("CLACK_CURRENT_USER_FULLNAME");
+
+    const chatWin = document.querySelector(".chatWin");
+    const input = document.getElementById("messages");
+    const broadcast = document.querySelector(".broadcast");
+
     try {
         const user = await fetch(`https://clackbackend.herokuapp.com/users/${userId}`, {
             headers: {
@@ -27,24 +32,36 @@ document.addEventListener("DOMContentLoaded", async (event) => {
                 Authorization: `Bearer ${localStorage.getItem('CLACK_ACCESS_TOKEN')}`
             }
         })
-        const { Messages } = await allMessages.json()
+        const { Messages } = await allMessages.json();
         const messagesContainer = document.querySelector(".messageDisplay");
+        //creates an array of html divs containing messages from db
         const messagesHTML = Messages.map(
-            ({ message, User: { fullName }, createdAt }) => `
-			<div class="message">
-				<span class="message-author">
-					<strong>${fullName}</strong> : 
-				</span>
-				<span class="message-body">
-				<span class="message-text"> ${message}</span>
-                </span>
-                <span class="timestamp">
-                     (${new Date(createdAt).getHours()}:${new Date(createdAt).getMinutes()}:${new Date(createdAt).getSeconds()})
-                </span>
-			</div>
-			`
-        );
-        messagesContainer.innerHTML += messagesHTML.join("");
+            ({ message, User: { fullName }, createdAt }) => {
+                let div = document.createElement("div");
+                div.style.paddingLeft = "10px";
+                div.style.paddingBottom = "10px";
+                div.innerHTML = `<div><strong>${fullName}</strong> : ${message}    ${new Date(createdAt).getHours()}:${new Date(createdAt).getMinutes()}:${new Date(createdAt).getSeconds()}</div>`;
+                return div;
+            })
+        messagesHTML.forEach(message => {
+            chatWin.appendChild(message);
+            message.scrollIntoView(false)
+        })
+        //old way to get messages from db onto screen
+        // `
+        // <div class="message">
+        // 	<span class="message-author">
+        // 		<strong>${fullName}</strong> : 
+        // 	</span>
+        // 	<span class="message-body">
+        // 	<span class="message-text"> ${message}</span>
+        //     </span>
+        //     <span class="timestamp">
+        //          (${new Date(createdAt).getHours()}:${new Date(createdAt).getMinutes()}:${new Date(createdAt).getSeconds()})
+        //     </span>
+        // </div>
+        // `
+        //messagesContainer.innerHTML += messagesHTML.join("");
 
         //grabbing channels for side-panel
 
@@ -53,9 +70,6 @@ document.addEventListener("DOMContentLoaded", async (event) => {
         console.error(e);
     }
 
-    const chatWin = document.querySelector(".chatWin");
-    const input = document.getElementById("messages");
-    const broadcast = document.querySelector(".broadcast");
     //const messageDisplay = document.querySelector(".messageDisplay");
 
 

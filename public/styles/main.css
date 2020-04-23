@@ -14,7 +14,8 @@ body {
 
 .grid-container {
   display: grid; 
-  
+  height: 100vh;
+  min-height: 400px;
   grid-template-columns: 17% 83%;
   grid-template-rows: 5% 95%;
   
