@@ -3,19 +3,20 @@ body {
     
     margin: 0;
     padding: 0;
+    background-color: white;
     
 }
 
-@media screen and (max-width: 800px) {
+/* @media screen and (max-width: 800px) {
   body {
-    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller
   }
-}
+} */
 
 .grid-container {
   display: grid; 
   height: 100vh;
-  min-height: 400px;
+  width: 100vw;
   grid-template-columns: 17% 83%;
   grid-template-rows: 5% 95%;
   
@@ -29,6 +30,8 @@ body {
     padding-left: 10px;
     padding-right: 10px;
     height: 45px;
+    /* width: 100vw; */
+    
     width: 100%;
     font-size: 25px;
     color: gray;
@@ -41,53 +44,62 @@ body {
     grid-column: 2;
     grid-row: 2;
     margin: 0;
+    /* height: 100vh;
+    width: 100vw;
+    min-height: 400px; */
     
-    width: 100%;
+    
     height: 100%;
 }
 
 .chatWin {
 
-    
+    /* position: relative; */
     padding: 5px;
-    height: 730px;
+    height: 660px;
+    width: 100%;
     background-color: white;
     font-size: 18px;
     overflow: auto; /* before had it to overflow-y: scroll */
     
 }
 
-.messageDisplay {
+/* .messageDisplay {
     
     padding: 15px;
-    height: 665px;
+    height: 565px;
     background-color: white;
     font-size: 18px;
-    /* overflow-y: scroll, */
-}
+    /* overflow-y: scroll,
+}*/
 
 .broadcast {
    
     background-color: white;
     
     padding-left: 10px;
-    padding-right: 10px;
-    height: 40px;
+    
+    height: 16px;
     width: 35%;
-    font-size: 18px;
+    
+
+    font-size: 14px;
+    
     
 }
 
 .messageField {
     /* justify-self: stretch; */
     /* background-color: #f0f0f0; */
+    
+    bottom: 35px;
     background-color: #003399;;
     border: 1px solid black;
     border-radius: .2em;
     margin-right: 15px;
     margin-left: 15px;
     height: 80px;
-    width: 100%;
+    width: 95%;
     /* background-color: lightgrey; */
     
     
@@ -112,6 +124,73 @@ body {
     height: 35px;
     width: 100%;
 } */
+
+
+.switch {
+  position: relative;
+  left: 240px;
+  bottom: 28px;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: gray;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #003399;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+/* Rounded sliders */
+.switch .slider.round {
+  border-radius: 34px;
+}
+
+.switch .slider.round:before {
+  border-radius: 50%;
+}
+
+#editor-container {
+  width: 100%;
+  overflow: auto;
+}
 
 .icon-bar {
   width: 100%; /* Full-width */
@@ -140,6 +219,9 @@ body {
 .hidden{
   display: none;
 }
+
+
+
 
 
 
