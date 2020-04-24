@@ -4,12 +4,12 @@ extends layout.pug
 block content
   body
     div.grid-container
-      div.nav Clack Emoji-View
-        div
-          label.switch#emoji-switch
-            input(type="checkbox")
-            span.slider.round
-        include includes/audio.pug
+      div.nav Clack
+      div.switch-container Emoji-View
+        label.switch#emoji-switch
+          input(type="checkbox")
+          span.slider.round
+      include includes/audio.pug
         //- /side panel/
       include includes/side-panel.pug
         block content
