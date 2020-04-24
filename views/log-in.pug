@@ -1,15 +1,15 @@
 extends layout.pug
 
 block content
-    
-    div.mainLogin
-      div.errors-container(align="center")
-      h2.sign(align="center") Log In
-      form.log-in-form
-        include includes/auth-form-fields
-        div#login-buttons
-          button.submit(type='submit') Log In
-          button.submit(id="demoUser") Demo
-      div.signLink(align="center")
-        a(href='/sign-up') Don't have an account? Sign up here.
-    script(type="module" src="scripts/log-in.js")    
+    div.login-container
+      div.mainLogin
+        div.errors-container(align="center")
+        h2.sign(align="center") Log In
+        form.log-in-form
+          include includes/auth-form-fields
+          div#login-buttons
+            button.submit(type='submit') Log In
+            button.submit(id="demoUser") Demo
+        div.signLink(align="center")
+          a(href='/sign-up') Don't have an account? Sign up here.
+      script(type="module" src="scripts/log-in.js")    

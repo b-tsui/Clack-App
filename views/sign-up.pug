@@ -1,16 +1,17 @@
 extends layout.pug
 
 block content
-  div.mainSignUp
-    div.errors-container
-    h2.sign(align="center") Sign Up
-    form.sign-up-form
-      .form-group
-        input.inputField(type="text" name="fullName" placeholder="Full Name")
-      include includes/auth-form-fields
-      .form-group
-        input.inputField(type="password", name="confirmPassword", placeholder="Confirm Password")
-      button.submit#signup-button(type="submit") Sign Up
-    div.signLink(align="center")
-      a(href="/log-in") Already have an account? Log in here.
-  script(type="module" src="scripts/sign-up.js")
+  div.login-container
+    div.mainSignUp
+      div.errors-container
+      h2.sign(align="center") Sign Up
+      form.sign-up-form
+        .form-group
+          input.inputField(type="text" name="fullName" placeholder="Full Name")
+        include includes/auth-form-fields
+        .form-group
+          input.inputField(type="password", name="confirmPassword", placeholder="Confirm Password")
+        button.submit#signup-button(type="submit") Sign Up
+      div.signLink(align="center")
+        a(href="/log-in") Already have an account? Log in here.
+    script(type="module" src="scripts/sign-up.js")
