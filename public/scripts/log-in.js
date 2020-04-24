@@ -35,6 +35,7 @@ logInForm.addEventListener("submit", async (e) => {
         localStorage.setItem("CLACK_CURRENT_USER_FULLNAME", name)
         localStorage.setItem("CLACK_ACCESS_TOKEN", token);
         localStorage.setItem("CLACK_CURRENT_USER_ID", id);
+        localStorage.setItem("CLACK_CURRENT_CHANNEL_ID", 1);
 
         // Redirects user to main channel page
         window.location.href = "/main";
@@ -69,6 +70,7 @@ demoLogIn.addEventListener("click", async (e) => {
         localStorage.setItem("CLACK_CURRENT_USER_FULLNAME", name)
         localStorage.setItem("CLACK_ACCESS_TOKEN", token);
         localStorage.setItem("CLACK_CURRENT_USER_ID", id);
+        localStorage.setItem("CLACK_CURRENT_CHANNEL_ID", 1);
 
         // Redirects user to main channel page
         window.location.href = "/main";
