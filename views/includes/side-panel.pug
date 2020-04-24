@@ -22,15 +22,17 @@ div.panel
       div.channel
         div: a(href="/main" class="links") # Main
         //- div: a(href="/help-requests" class="links") # Help-Requests
-        div#addChannel: a(href="" class="links") + Add
-          div#addChannelModal
-            div#addChannelForm
-              form.form#addChannelForm
-                div  
-                  label(for="name") Enter Name 
-                  input.form-input(type="text", name="name", placeholder="")   
-                div
-                  button.btn(type='submit') Save changes
+        div#addChannel.links + Add
+        div#addChannelModal
+          div#addChannelFormContainer
+            form.form#addChannelForm
+              div  
+                label(for="name") Enter Name 
+                input.form-input(type="text", name="name", placeholder="")   
+              div
+                button.btn(type='submit') Create Channel
+              div
+                button.closeCreateChannel(type='button') x
   div.directMessage
     div
       button(type="button" id="dmDropdown") Direct Message
@@ -47,7 +49,7 @@ div.editProfile
       include edit-profile.pug
       div.btns
         button.btn#saveProfileEdit(type='submit') Save changes
-        butto.btn(type='cancel') Cancel
+        button.btn(type='cancel') Cancel
     button.closeEditProfile(type='button') x
     div#editProfileImg
       div#pict
