@@ -3,7 +3,7 @@ let chatContainer = document.querySelector(".chat-container");
 let modal = document.getElementById("modal");
 
 // Get the button that opens the modal
-let modalButton = document.getElementById("modalButton");
+let userModalButton = document.getElementById("userModalButton");
 
 let channelDropdown = document.getElementById("channelDropdown");
 let channels = document.querySelector(".channel");
@@ -13,7 +13,7 @@ let channels = document.querySelector(".channel");
 let dmDropdown = document.getElementById("dmDropdown");
 let dms = document.querySelector(".dms");
 
-modalButton.addEventListener("click", event => {
+userModalButton.addEventListener("click", event => {
     modal.style.display = "block";
     modal.removeAttribute("modal-transform");
 });
