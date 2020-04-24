@@ -3,6 +3,10 @@ body {
     /*width: 100%;*/
 }
 
+.navbar{
+    background-color: #667292;
+}
+
 .navbar-brand {
     color: black;
 }
