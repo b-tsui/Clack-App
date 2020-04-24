@@ -1,15 +1,58 @@
-/*body {
-    background-image: url("");
-    width: 100%;
-}*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Tangerine&display=swap');
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC|Open+Sans&display=swap');
 
-.navbar{
+body {
+    /* background-image: url(""); */
+    background-color: #f1e3dd;
+    
+}
+
+.nav {
+    
+    
     background-color: #667292;
+    padding: 15px;
+    
 }
 
-.navbar-brand {
-    color: black;
+a {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'IM Fell DW Pica SC', serif;
+    color: #bccad6;
 }
+
+a:hover {
+    color: #f1e3dd;
+}
+
+#demoUser {
+    border: 1px groove #667292;
+    border-radius: 12px;
+    position: relative;
+    left: 990px;
+    background-color: #8d9db6; 
+    color: #f1e3dd;
+    font-weight: bolder;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'IM Fell DW Pica SC', serif;
+}
+
+#demoUser:hover {
+    background-color: #f1e3dd;
+    color: #667292;
+}
+
+h1 {
+    font-family: 'Tangerine', cursive;
+    text-align: center;
+    font-size: 150px;
+    padding-top: 30px;
+    color: #667292;
+    font-weight: bold;
+    
+}
+
+/* carousel */
 
 * {box-sizing:border-box}
 
@@ -108,4 +151,51 @@
   from {opacity: .4}
   to {opacity: 1}
 }
+
+/* parallax */
+
+.intro {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'IM Fell DW Pica SC', serif;
+    font-size: 80px;
+    color: #bccad6;
+    text-align: center;
+}
+
+.parallax {
+  background-image: url('../images/workhome.jpg');
+  /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallaxTwo {
+  background-image: url('../images/workhome3.jpg');
+  /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallaxThree {
+  background-image: url('../images/workhome4.jpg');
+  /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 
