@@ -55,7 +55,8 @@ profile.addEventListener("click", event => {
         editProfile.style.display = "block";
         let gridContainer = document.querySelector(".grid-container");
         gridContainer.classList.add("editProfileTransform")
-        editProfileTransform.style.display = "block"
+        // const editProfileTransform = document.querySelector(".editProfileTransform");
+        // editProfileTransform.style.display = "block"
 
     })
 
