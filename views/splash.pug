@@ -5,16 +5,20 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="icon" type="image/png" sizes="32x32" href="./images/favicon.ico")
         title Clack App
+        
         link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous")
         link(rel="stylesheet", type="text/css", href="./styles/styles.css")
     body    
       div
-        nav.navbar.navbar-dark
+        nav.nav
           a(class="navbar-brand" href="https://github.com/b-tsui/Clack-App" target="_blank") About
           a(class="navbar-brand" href="https://github.com/b-tsui/Clack-App" target="_blank") Contact
           a(class="navbar-brand" href="/sign-up") Sign-Up
           a(class="navbar-brand" href="/log-in") Log-In
-      
+          button(type="button" id="demoUser") DEMO USER
+            a(href="/main")
+      h1 Welcome to Clack!
+      //- carousel slideshow
       div(class="slideshow-container")
         div(class="mySlides fade")
           div(class="numbertext") 1 / 3
@@ -34,7 +38,24 @@ html(lang="en")
         span(class="dot" onclick="currentSlide(1)")
         span(class="dot" onclick="currentSlide(2)")
         span(class="dot" onclick="currentSlide(3)")
+
+      //- parallax
+      
+      div.intro WORK FROM HOME 
+      div.intro Clack brings the team together, wherever you are With all of your communication and tools in one place, remote teams will stay productive no matter where you’re working from.
+      
+      div.parallax
+
+      div(class="embed-responsive embed-responsive-21by9")
+        iframe(class="embed-responsive-item" src="https://www.youtube.com/embed/EYqxQGmQkVw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+
+      div.intro Break out of the inbox Working in channels gives everyone on your team a shared view of progress and purpose.
+
+      div.parallaxTwo
+
+      div.intro Shared channels bring companies together Now channels can help you work as closely with external partners and clients as you do with teams down the hall.
+
+      div.parallaxThree
+      
       script(type="module" src="./scripts/splash.js")
-      
-      
-            
+      script(type="module" src="scripts/log-in.js")     
