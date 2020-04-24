@@ -13,6 +13,12 @@ addChannel.addEventListener("click", event => {
     addChannelForm.style.display = "block";
 })
 
+const mainRedirect = document.getElementById("mainRedirect");
+mainRedirect.addEventListener("click", event => {
+    event.preventDefault();
+    localStorage.setItem("CLACK_CURRENT_CHANNEL_ID", 1);
+    window.location.reload();
+});
 
 //closing the create channel form pop-up twith X button
 
