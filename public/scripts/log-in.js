@@ -46,8 +46,9 @@ logInForm.addEventListener("submit", async (e) => {
 //Allows users to log in as a demo user to test clack app functionality
 //Users will not have to provide any login credentials and get to chat instantly
 demoLogIn.addEventListener("click", async (e) => {
+    e.preventDefault();
     try {
-        const res = await fetch("https://clackbackend.herokuapp.com/users/token", {
+        const res = await fetch(`https://clackbackend.herokuapp.com/users/token`, {
             method: "POST",
             body: JSON.stringify({
                 email: "demo@demo.com",
