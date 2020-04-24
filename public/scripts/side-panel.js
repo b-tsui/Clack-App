@@ -103,21 +103,5 @@ dmDropdown.addEventListener("click", e => {
     dms.classList.toggle("dms");
 });
 
-//add channel: pop-up where you can add the name for the channel once done, the user will be the owner for it
-const addChannel = document.getElementById("addChannel");
-const addChannelModal = document.getElementById("addChannelModal");
-const addChannelForm = document.getElementById("addChannelForm");
-const channel = document.querySelector(".channel")
-addChannel.addEventListener("click", event => {
-    addChannelModal.style.display = "block";
-    addChannelForm.style.display = "block";
-    channel.style.display = "block";
-})
 
-// remove the channel pop-up from the page
-chatContainer.addEventListener("click", e => {
-    if (addChannelForm.style.display === "block") {
-        addChannelForm.style.display = "none";
-    }
-});
 

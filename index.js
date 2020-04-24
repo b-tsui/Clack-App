@@ -50,3 +50,4 @@ app.get('/general', (req, res) => {
 app.get('/help-requests', (req, res) => {
     res.render('help-requests');
 });
+

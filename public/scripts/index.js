@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     //Grabs userid & fullName from local storage
     const userId = localStorage.getItem("CLACK_CURRENT_USER_ID");
     const name = localStorage.getItem("CLACK_CURRENT_USER_FULLNAME");
+    const channelId = localStorage.getItem("CLACK_CURRENT_CHANNEL_ID");
 
     //Grabs all elements for chat container
     const chatWin = document.querySelector(".chatWin");
@@ -42,7 +43,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
         }
 
         //If user is authorized, grabs all messages from database for main channel
-        const allMessages = await fetch(`https://clackbackend.herokuapp.com/channels/1/messages`, {
+        const allMessages = await fetch(`https://clackbackend.herokuapp.com/channels/${channelId}/messages`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('CLACK_ACCESS_TOKEN')}`
             }
@@ -97,7 +98,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
         if (e.key === 'Enter') {
 
             try {
-                const message = await fetch(`https://clackbackend.herokuapp.com/channels/1/messages`, {
+                const message = await fetch(`https://clackbackend.herokuapp.com/channels/${channelId}/messages`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
