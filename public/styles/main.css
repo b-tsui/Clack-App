@@ -15,7 +15,7 @@ body {
 
 .grid-container {
   display: grid; 
-  grid-template-columns: 150px 1fr;
+  grid-template-columns: 150px 1fr 150px;
   grid-template-rows: 52px 1fr;
   
 } 
@@ -36,11 +36,31 @@ body {
     color: #f1e3dd;/*changed from gray*/
     font-weight: bold;
     font-style: italic;
+
   }
+.switch-container{
+    grid-column: 3;
+    background-color: #667292;
+    margin: 0;
+    padding-top: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* height: 45px; */
+    height: 40px;
+    /* width: 100vw; */
+    
+    width: auto; /*changed from 100%*/
+    font-size: 16px;
+    color: #f1e3dd;/*changed from gray*/
+    font-weight: bold;
+    font-style: italic;
+
+    display: flex;
+}
 
 .chat-container {
-    grid-column: 2/3; /*before was just 2*/
-    grid-row: 2/3;  /*before was just 2*/
+    grid-column: 2/4; /*before was just 2*/
+    grid-row: 2/4;  /*before was just 2*/
     /*margin-right: 20px;*/
 
     /* height: 100vh;
@@ -135,9 +155,9 @@ body {
 
 .switch {
   position: relative;
-  left: 240px;
-  bottom: 28px;
-  display: inline-block;
+  display: flex;
+  top: 5px;
+  right: 15px;
   width: 50px;
   height: 24px;
 }
