@@ -9,7 +9,7 @@
 }
 
 /* modal button */
-#modalButton {
+#userModalButton {
     width: 100%;
     height: 60px;
     text-align: left;
@@ -68,7 +68,7 @@
 }
 
 #profile:hover{
-    background-color: blue;
+    background-color: #667292;
 }
 
 #profile-transform{
@@ -91,7 +91,7 @@
 }
 
 #preferences:hover{
-    background-color: blue;
+    background-color: #667292;
 }
 
 #sign-out-workspace {
@@ -102,7 +102,7 @@
 }
 
 #sign-out-workspace:hover{
-    background-color: blue;
+    background-color: #667292;
     
    
 }
@@ -114,7 +114,7 @@
 }
 
 #invitation:hover{
-    background-color: blue;
+    background-color: #667292;
 }
 
 #editButton
@@ -125,7 +125,7 @@
 }
 
 #editButton:hover{
-    background-color: blue;
+    background-color: #667292;
 }
 
 #chatButton{
@@ -135,7 +135,7 @@
 }
 
 #chatButton:hover{
-background-color: blue;
+background-color: #667292;
 }
 
 /* .userName {
@@ -187,7 +187,7 @@ margin-top: center;
 }
 
 .links:hover {
-    background-color: #87bdd8;;
+    background-color: #667292;
 }
 
 /* .editProfileTransform{
@@ -258,10 +258,10 @@ margin-top: center;
    display: block;
   }
 
-  #btn {
+  .btn {
     cursor: pointer;
       color: #fff;
-      background: linear-gradient(to right, rgb(78, 70, 201), rgb(91, 107, 255));
+      background: linear-gradient(to right, #667292, #8d9db6);
       border: 0;
       padding-left: 40px;
       padding-right: 40px;
@@ -275,7 +275,7 @@ margin-top: center;
       box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
   }
 
-  #form-input{
+  .form-input{
     width: 50%;
     color: rgb(38, 50, 56);
     font-weight: 700;
@@ -341,7 +341,7 @@ margin-top: center;
       width: 120px;
     cursor: pointer;
     color: #fff;
-    background: linear-gradient(to right, rgb(78, 70, 201), rgb(91, 107, 255));
+    background: linear-gradient(to right, #667292, #8d9db6);
     border: 0;
     font-family: Arial, Helvetica, sans-serif, sans-serif;
     font-size: 13px;

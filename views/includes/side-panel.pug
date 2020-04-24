@@ -1,36 +1,36 @@
 div.panel
   div
-    button(type="button" id="modalButton") 
+    button(type="button" id="userModalButton") 
       div Workspace 
-      div User
+      div#nameDisplay
     div#modal 
-      div.userName Aristotle Modal
-      div.modalContent
+      div#fullName
+      div#modalContent
         img(src="https://spartacus-educational.com/00aristotle.jpg" id="avatar")
       div
-        button(type="button" id="profile") View profile
-      div
-        button(type="button" id="preferences") Preferences
-      div
-        button(type="button" id="invitation") Invite People to Workspace
+        button(type="submit" id="profile") View profile
+      //- div
+      //-   button(type="button" id="preferences") Preferences
+      //- div
+      //-   button(type="button" id="invitation") Invite People to Workspace
       div
         //- this needs to be changed to the variable workspace
-        button(type="button" id="sign-out-workspace") Sign out of workspace 
+        button(type="submit" id="sign-out-workspace") Sign out of workspace 
   div.channels
     div
       button(type="button" id="channelDropdown") Channels
       div.channel
-        div: a(href="/general" class="links") # General
-        div: a(href="/help-requests" class="links") # Help-Requests
+        div: a(href="/main" class="links") # Main
+        //- div: a(href="/help-requests" class="links") # Help-Requests
         div#addChannel: a(href="" class="links") + Add
           div#addChannelModal
             div#addChannelForm
-              form.form
+              form.form#addChannelForm
                 div  
                   label(for="name") Enter Name 
-                  input#form-input(type="text", name="name", placeholder="")   
+                  input.form-input(type="text", name="name", placeholder="")   
                 div
-                  button#btn(type='submit') Save changes
+                  button.btn(type='submit') Save changes
   div.directMessage
     div
       button(type="button" id="dmDropdown") Direct Message
@@ -43,11 +43,11 @@ div.panel
 div.editProfile
   div.edit-profile-form
     div#edit Edit Your Profile
-    form.form
+    form.form#editProfileForm
       include edit-profile.pug
       div.btns
-        button#btn(type='submit') Save changes
-        button#btn(type='cancel') Cancel
+        button.btn#saveProfileEdit(type='submit') Save changes
+        butto.btn(type='cancel') Cancel
     button.closeEditProfile(type='button') x
     div#editProfileImg
       div#pict

@@ -10,7 +10,7 @@ block content
       include includes/auth-form-fields
       .form-group
         input.inputField(type="password", name="confirmPassword", placeholder="Confirm Password")
-      button.submit(type="submit") Sign Up
+      button.submit#signup-button(type="submit") Sign Up
     div.signLink(align="center")
       a(href="/log-in") Already have an account? Log in here.
   script(type="module" src="scripts/sign-up.js")
