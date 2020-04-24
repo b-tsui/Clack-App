@@ -26,7 +26,7 @@
     .sign {
         padding-top: 10px;
         padding-bottom: 15px;
-        color: rgb(85, 105, 170);
+        color: #667292;
         font-family: Arial, Helvetica, sans-serif, sans-serif;
         font-weight: bold;
         font-size: 30px;
@@ -66,14 +66,14 @@
       cursor: pointer;
         border-radius: 5em;
         color: #fff;
-        background: linear-gradient(to right, rgb(78, 70, 201), rgb(91, 107, 255));
+        background: linear-gradient(to right, #667292, #8d9db6);
         border: 0;
         padding-left: 40px;
         padding-right: 40px;
         padding-bottom: 10px;
         padding-top: 10px;
         font-family: Arial, Helvetica, sans-serif, sans-serif;
-        margin-left: 35%;
+        /*margin-left: 35%;*/
         font-size: 13px;
         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
     }
@@ -87,12 +87,15 @@
 
     a {
         text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
-        color: rgb(164, 175, 236);
+        color: #8d9db6;
         text-decoration: none
     }
 
-    .demoButton{
-        padding-top: 20px;
+    #login-buttons{
+        display: flex;
+        flex-direction: row;
+        margin: 0px 10px 10px 10px;
+        justify-content: space-evenly;
     }
 
     .errors-container{
