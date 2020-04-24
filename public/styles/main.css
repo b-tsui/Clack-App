@@ -19,6 +19,8 @@ body {
   width: 100vw;
   grid-template-columns: 17% 83%;
   grid-template-rows: 5% 95%;
+  /* grid-template-columns: 1fr 1fr;
+  grid-template-rows: 150px 1fr; */
   
 } 
 
@@ -29,7 +31,8 @@ body {
     padding-top: 7px;
     padding-left: 10px;
     padding-right: 10px;
-    height: 45px;
+    /* height: 45px; */
+    height: 40px;
     /* width: 100vw; */
     
     width: 100%;

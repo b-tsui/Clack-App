@@ -9,7 +9,7 @@ block content
           label.switch#emoji-switch
             input(type="checkbox")
             span.slider.round
-
+        include includes/audio.pug
         //- /side panel/
       include includes/side-panel.pug
         block content
@@ -24,5 +24,7 @@ block content
     script(type="module" src="./scripts/index.js")
     script(type="module" src="./scripts/side-panel.js")
     script(type="module" src="./scripts/icon-bar.js")
+    script(type="module" src="./scripts/audio.js")
+    
 
       
