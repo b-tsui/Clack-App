@@ -8,10 +8,33 @@ html(lang="en")
         link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous")
         link(rel="stylesheet", type="text/css", href="./styles/styles.css")
     body    
-    div
-      nav.navbar.navbar-dark
-        a(class="navbar-brand" href="https://github.com/b-tsui/Clack-App" target="_blank") About
-        a(class="navbar-brand" href="https://github.com/b-tsui/Clack-App" target="_blank") Contact
-        a(class="navbar-brand" href="/sign-up") Sign-Up
-        a(class="navbar-brand" href="/log-in") Log-In
+      div
+        nav.navbar.navbar-dark
+          a(class="navbar-brand" href="https://github.com/b-tsui/Clack-App" target="_blank") About
+          a(class="navbar-brand" href="https://github.com/b-tsui/Clack-App" target="_blank") Contact
+          a(class="navbar-brand" href="/sign-up") Sign-Up
+          a(class="navbar-brand" href="/log-in") Log-In
+      
+      div(class="slideshow-container")
+        div(class="mySlides fade")
+          div(class="numbertext") 1 / 3
+          img(src="./images/workspace.jpg" style="width:100%")
+          div(class="text") Caption Text
+        div(class="mySlides fade")
+          div(class="numbertext") 2 / 3
+          img(src="./images/live-chat.jpg" style="width:100%")
+          div(class="text") Caption Two
+        div(class="mySlides fade")
+          div(class="numbertext") 3 / 3
+          img(src="./images/workspace2.jpg" style="width:100%")
+          div(class="text") Caption Three
+        a(class="prev" onclick="plusSlides(-1)") &#10094;
+        a(class="next" onclick="plusSlides(1)") &#10095;
+      div(style="text-align:center")
+        span(class="dot" onclick="currentSlide(1)")
+        span(class="dot" onclick="currentSlide(2)")
+        span(class="dot" onclick="currentSlide(3)")
+      script(type="module" src="./scripts/splash.js")
+      
+      
             
