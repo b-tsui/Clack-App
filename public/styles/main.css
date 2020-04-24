@@ -15,18 +15,14 @@ body {
 
 .grid-container {
   display: grid; 
-  height: 100vh;
-  width: 100vw;
-  grid-template-columns: 17% 83%;
-  grid-template-rows: 5% 95%;
-  /* grid-template-columns: 1fr 1fr;
-  grid-template-rows: 150px 1fr; */
+  grid-template-columns: 150px 1fr;
+  grid-template-rows: 52px 1fr;
   
 } 
 
 .nav {
     grid-column: 1 / span 2;
-    background-color: #003399;
+    background-color: #667292;
     margin: 0;
     padding-top: 7px;
     padding-left: 10px;
@@ -35,36 +31,48 @@ body {
     height: 40px;
     /* width: 100vw; */
     
-    width: 100%;
+    width: auto; /*changed from 100%*/
     font-size: 25px;
-    color: gray;
+    color: #f1e3dd;/*changed from gray*/
     font-weight: bold;
     font-style: italic;
-
-}
+  }
 
 .chat-container {
-    grid-column: 2;
-    grid-row: 2;
-    margin: 0;
+    grid-column: 2/3; /*before was just 2*/
+    grid-row: 2/3;  /*before was just 2*/
+    /*margin-right: 20px;*/
+
     /* height: 100vh;
     width: 100vw;
     min-height: 400px; */
-    
-    
     height: 100%;
+
+    /*below is new*/
+    display: grid;
+    grid-template-rows: 80vh 85fr 20px;
+
 }
 
 .chatWin {
 
     /* position: relative; */
     padding: 5px;
-    height: 660px;
-    width: 100%;
-    background-color: white;
+    /*height: 660px;*/
+    height: 80vh;
+    /*width: 100%;*/
     font-size: 18px;
     overflow: auto; /* before had it to overflow-y: scroll */
-    
+    /*below is new*/
+    grid-row: 1/2;
+    background-color:#8d9db6;
+    color:#f0eae8;
+    scrollbar-color: auto;
+    border: 5px inset #8d9db6;
+    border-radius: .3em;
+}
+.chatWin::-webkit-scrollbar-track{
+  background-color:rgb(231, 242, 255); 
 }
 
 /* .messageDisplay {
@@ -96,13 +104,14 @@ body {
     /* background-color: #f0f0f0; */
     
     bottom: 35px;
-    background-color: #003399;;
+    background-color: #667292;
     border: 1px solid black;
     border-radius: .2em;
     margin-right: 15px;
     margin-left: 15px;
     height: 80px;
-    width: 95%;
+    /*width: 95%;*/
+    min-width: 250px;
     /* background-color: lightgrey; */
     
     
@@ -151,7 +160,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: gray;
+  background-color: #8d9db6;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -163,17 +172,17 @@ body {
   width: 16px;
   left: 4px;
   bottom: 4px;
-  background-color: #003399;
+  background-color: #667292;
   -webkit-transition: .4s;
   transition: .4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #f1e3dd;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #8d9db6;
 }
 
 input:checked + .slider:before {
@@ -207,16 +216,16 @@ input:checked + .slider:before {
   width: 11%; /* Equal width (5 icons with 20% width each = 100%) */
   padding: 12px 0; /* Some top and bottom padding */
   transition: all 0.3s ease; /* Add transition for hover effects */
-  color: gray; /* White text color */
+  color: #f1e3dd; /* White text color */
   font-size: 14px; /* Increased font size */
 }
 
 .icon-bar a:hover {
-  background-color: #87bdd8; /* Add a hover color */
+  background-color: #667292; /* Add a hover color */
 }
 
 .active {
-  background-color: lightblue;
+  background-color: #667292;
 }
 
 .hidden{
