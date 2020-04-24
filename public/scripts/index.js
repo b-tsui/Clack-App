@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
 
     //When user types, emits socket signal for typing
     input.addEventListener("keypress", event => {
-        socket.emit("typing", "test");
+        socket.emit("typing", name);
     });
 
     //When a signal for chat is received, displays the new message into the chat window

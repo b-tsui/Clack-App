@@ -50,8 +50,6 @@ body {
 
     /*below is new*/
     display: grid;
-    grid-template-rows: 80vh 85fr 20px;
-
 }
 
 .chatWin {
@@ -64,16 +62,13 @@ body {
     font-size: 18px;
     overflow: auto; /* before had it to overflow-y: scroll */
     /*below is new*/
-    grid-row: 1/2;
     background-color:#8d9db6;
     color:#f0eae8;
     scrollbar-color: auto;
     border: 5px inset #8d9db6;
     border-radius: .3em;
 }
-.chatWin::-webkit-scrollbar-track{
-  background-color:rgb(231, 242, 255); 
-}
+
 
 /* .messageDisplay {
     
@@ -86,7 +81,7 @@ body {
 
 .broadcast {
    
-    background-color: white;
+    background-color: #8d9db6;
     
     padding-left: 10px;
     
@@ -95,6 +90,7 @@ body {
     
 
     font-size: 14px;
+    color: #f0eae8;
     
     
 }
@@ -107,8 +103,7 @@ body {
     background-color: #667292;
     border: 1px solid black;
     border-radius: .2em;
-    margin-right: 15px;
-    margin-left: 15px;
+    padding-right: 10px;
     height: 80px;
     /*width: 95%;*/
     min-width: 250px;
