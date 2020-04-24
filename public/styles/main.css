@@ -16,7 +16,7 @@ body {
 .grid-container {
   display: grid; 
   grid-template-columns: 150px 1fr 150px;
-  grid-template-rows: 52px 1fr;
+  grid-template-rows: 47px 1fr;
   
 } 
 
@@ -123,7 +123,7 @@ body {
     background-color: #667292;
     border: 1px solid black;
     border-radius: .2em;
-    padding-right: 10px;
+    padding-right: 2px;
     height: 80px;
     /*width: 95%;*/
     min-width: 250px;
@@ -135,11 +135,12 @@ body {
 #messages {
     
     margin: 0;
-    padding-left: 7px;
-    width: 99%;
+    padding-left: 2px;
+    padding-right: 0px;
+    width: 100%;
     border-radius: .3em;
-    height: 35px;
-    
+    height: 40px;
+    box-sizing: border-box;
     font-size: 18px;
    
 }
@@ -236,7 +237,7 @@ input:checked + .slider:before {
 }
 
 .icon-bar a:hover {
-  background-color: #667292; /* Add a hover color */
+  background-color: #8d9db6; /* Add a hover color */
 }
 
 .active {
