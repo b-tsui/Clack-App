@@ -21,8 +21,8 @@ button:focus {
 
 .grid-container {
   display: grid; 
-  grid-template-columns: 150px 1fr 150px;
-  grid-template-rows: 47px 1fr;
+  grid-template-columns: 1fr 5fr 150px;
+  grid-template-rows: 55px 1fr;
   
 } 
 
@@ -30,36 +30,35 @@ button:focus {
     grid-column: 1 / span 2;
     background-color: #667292;
     margin: 0;
-    padding-top: 7px;
+    padding-top: 0px;
     padding-left: 10px;
     padding-right: 10px;
-    /* height: 45px; */
-    height: 40px;
-    /* width: 100vw; */
+    padding-bottom: 5px;
+    height: 53x;
     
     width: auto; /*changed from 100%*/
-    font-size: 25px;
+    font-size: 45px;
+    font-family: 'Brush Script MT', 'Brush Script Std', cursive;
+    font-stretch: ultra-expanded;
     color: #f1e3dd;/*changed from gray*/
-    font-weight: bold;
-    font-style: italic;
-
   }
 .switch-container{
     grid-column: 3;
     background-color: #667292;
     margin: 0;
-    padding-top: 7px;
+    padding-top: 5px;
     padding-left: 10px;
     padding-right: 10px;
+    padding-bottom: 5px;
     /* height: 45px; */
-    height: 40px;
+    height: 53px;
     /* width: 100vw; */
     
     width: auto; /*changed from 100%*/
     font-size: 16px;
     color: #f1e3dd;/*changed from gray*/
     font-weight: bold;
-    font-style: italic;
+
 
     display: flex;
 }

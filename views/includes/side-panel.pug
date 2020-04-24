@@ -3,19 +3,20 @@ div.panel
     button(type="button" id="userModalButton") 
       div Workspace 
       div#nameDisplay
-    div#modal 
-      div#fullName
-      div#modalContent
-        img(src="https://spartacus-educational.com/00aristotle.jpg" id="avatar")
-      div
-        button(type="submit" id="profile") View profile
-      //- div
-      //-   button(type="button" id="preferences") Preferences
-      //- div
-      //-   button(type="button" id="invitation") Invite People to Workspace
-      div
-        //- this needs to be changed to the variable workspace
-        button(type="submit" id="sign-out-workspace") Sign out of workspace 
+    div#modal
+      div#modal-container 
+        div#fullName
+        div#modalContent
+          img(src="https://spartacus-educational.com/00aristotle.jpg" id="avatar")
+        div.modal-button
+          button(type="submit" id="profile") View profile
+        //- div
+        //-   button(type="button" id="preferences") Preferences
+        //- div
+        //-   button(type="button" id="invitation") Invite People to Workspace
+        div.modal-button
+          //- this needs to be changed to the variable workspace
+          button(type="submit" id="sign-out-workspace") Sign out of workspace 
   div.channels
     div
       button(type="button" id="channelDropdown") Channels
@@ -38,7 +39,7 @@ div.panel
         div: a(href="/log-in" class="links") @ User1
         div: a(href="/log-in" class="links") @ User2
         div: a(href="/sign-up" class="links") + Invite People
-  
+    
   
 div.editProfile
   div.edit-profile-form
