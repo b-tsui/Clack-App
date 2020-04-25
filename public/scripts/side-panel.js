@@ -40,6 +40,47 @@ profile.addEventListener("click", event => {
     const textEditButton = document.createTextNode("Edit profile");
     editButton.appendChild(textEditButton);
     modal.appendChild(editButton);
+
+
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    //add delete button for the profile
+    // const deleteUser = document.createElement("button");
+    // deleteUser.setAttribute("id", "deleteUser")
+    // const textDeleteButton = document.createTextNode("Delete profile");
+    // deleteUser.appendChild(textDeleteButton);
+    // modal.appendChild(deleteUser);
+
+   //delete the current user, needs to update backend to delete the channles and messages associated with the user
+   // the code for deleting is not working unless we add the code missing on the backend
+// const deleteUser = document.getElementById("deleteUser");
+// const userId = localStorage.getItem("CLACK_CURRENT_USER_ID");
+// deleteUser.addEventListener("click", async event =>{
+
+//     event.preventDefault();
+    
+//     try {
+//         const res = await fetch(`https://clackbackend.herokuapp.com/users/${userId}`, {
+//           method: "DELETE",
+//           headers: {
+//             Authorization: `Bearer ${localStorage.getItem(
+//               "CLACK_ACCESS_TOKEN"
+//             )}`
+//           },
+//         });
+//         if (!res.ok) {
+//           throw res;
+//         }
+//         // document.querySelector(`#user-${userId}`).remove();
+//         localStorage.removeItem("CLACK_ACCESS_TOKEN");
+//         window.location.href = "/";
+//       } catch (err) {
+//         console.error(err);
+//       }
+// })
+
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
     // //add message button to chat with the user
     // const chatButton = document.createElement("button");
     // chatButton.setAttribute("id", "chatButton")
