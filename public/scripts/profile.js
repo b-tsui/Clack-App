@@ -58,3 +58,6 @@ logOutButton.addEventListener("click", event =>{
     localStorage.removeItem("CLACK_ACCESS_TOKEN");
     window.location.href ="/";
 })
+
+ 
+
