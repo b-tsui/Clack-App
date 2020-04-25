@@ -4,7 +4,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: white;
-    
 }
 body::-webkit-scrollbar{
   color: #8d9db6;
@@ -35,7 +34,7 @@ button:focus {
   }
 
 .grid-container {
-  display: grid; 
+  display: grid;
   grid-template-columns: 1fr 5fr 150px;
   grid-template-rows: 55px 1fr;
   
