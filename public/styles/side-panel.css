@@ -333,6 +333,8 @@ margin-top: center;
     box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
     text-align: center;
     font-family: Arial, Helvetica, sans-serif, sans-serif;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .form{
@@ -344,10 +346,10 @@ margin-top: center;
     align-content: center;
 }
 #editProfileForm{
-
-    margin-top: 100px;
     width: 250px;
     height: 300px;
+    padding-top: 10px;
+    margin-left: 20px;
 }
   
 
@@ -355,7 +357,7 @@ margin-top: center;
   #editProfileImg{
    position: absolute;
    top: 60px;
-   right: 10px;
+   right: -10px;
    width: 30%;
    height: 80%;
    display: block;
@@ -377,7 +379,8 @@ padding-bottom: 10px;
 padding-top: 10px;
 font-family: Arial, Helvetica, sans-serif, sans-serif;
 text-align: center;
-margin-top: 20px;
+margin-top: 10px;
+margin-bottom: 10px;
 width: 175px;
 font-size: 18px;
 box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
@@ -387,74 +390,93 @@ border: none;
 outline: none;
 }
 
-  .form-input{
-    width: 50%;
-    color: rgb(38, 50, 56);
+.form-input{
+    width: 80%;
+    height: 45px;
+    color: #667292;
     font-weight: 700;
     font-size: 14px;
     letter-spacing: 1px;
-    background: rgba(136, 126, 126, 0.04);
+    background-color: #f0eae8;
     padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
     box-sizing: border-box;
     border: 2px solid rgba(0, 0, 0, 0.02);
-    /* margin-left: 46px; */
     text-align: center;
     /* margin-bottom: 27px; */
-    margin: 12px;
+    margin: 0px;
     font-family: Arial, Helvetica, sans-serif, sans-serif;
     border-radius: 1.5em;
     box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    font-size: 18px;
+}
 
-  }
+.form-input:focus{
+    outline: none;
+}
 
-  #pict{
-      width: 50px;
-      height: 50px;
-      position: absolute;
-      top: 30px;
-      right: 200px
-  }
+#pict{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 40px;
+    right: 45px
+}
 
 #edit{
     position: relative;
     left: 40px;
     top: 40px;
-    height: 250px;
-    width: 400px;
+    height: 50px;
+    width: 300px;
     bottom: 20px;
     text-align: left;
-    font-size: 40px;
+    font-size: 35px;
     font-weight: 700;
     color: #f0eae8;
     /* margin-bottom: 20px; */
 }
 
-
-
-  .closeEditProfile{
-      position: absolute;
-      top: 10px;
-      right: 10px
-  }
-
-
-  #btnpict{
-      height: 30px;
-      width: 120px;
-    cursor: pointer;
-    color: #fff;
-    background: linear-gradient(to right, #667292, #8d9db6);
-    border: 0;
-    font-family: Arial, Helvetica, sans-serif, sans-serif;
-    font-size: 13px;
-    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+.closeEditProfile{
     position: absolute;
-      bottom: 120px;
-      right: 110px
-  }
+    top: 20px;
+    right: 20px;
+    background-color: #667292;
+    color: #f0eae8;
+    height: 25px;
+    width: 25px;
+    box-shadow: 0px 11px 30px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    border-color: #667292;
+    outline: none;
+}
+
+
+#btnpict{
+    color: #f0eae8;
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
+    position: absolute;
+    bottom: 38px;
+    right: 60px;
+    cursor: pointer;
+    border-radius: 5em;
+    background-color: #667292;
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 175px;
+    font-size: 18px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    display: flex;
+    justify-content: center;
+    border: none;
+    outline: none;
+}
 
   #addChannelModal {
     display: none; /* Hidden by default */
@@ -466,8 +488,8 @@ outline: none;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: #8d9db6; /* Fallback color */
+
   }
   
   #addChannelForm {
