@@ -4,9 +4,23 @@ body {
     margin: 0;
     padding: 0;
     background-color: white;
-    
 }
-
+body::-webkit-scrollbar{
+  color: #8d9db6;
+}
+body::-webkit-scrollbar-corner{
+  color: #8d9db6;
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgb(141, 157, 182); 
+    border-radius: 10px;
+}
+body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    color: #667292;
+    -webkit-box-shadow: inset 0 0 20px rgb(102, 114, 146); 
+}
 /* @media screen and (max-width: 800px) {
   body {
     width: 100%; /* The width is 100%, when the viewport is 800px or smaller
@@ -20,7 +34,7 @@ button:focus {
   }
 
 .grid-container {
-  display: grid; 
+  display: grid;
   grid-template-columns: 1fr 5fr 150px;
   grid-template-rows: 55px 1fr;
   
@@ -41,6 +55,7 @@ button:focus {
     font-family: 'Brush Script MT', 'Brush Script Std', cursive;
     font-stretch: ultra-expanded;
     color: #f1e3dd;/*changed from gray*/
+
   }
 .switch-container{
     grid-column: 3;

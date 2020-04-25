@@ -4,34 +4,39 @@
     grid-row: 2/ 3;
     width: 100%;
     height: 100%;
-    min-width: 100px;
+    min-width: 135px;
     margin: 0;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    
 }
 
 /* modal button */
 #userModalButton {
     width: 100%;
-    height: 60px;
+    height: 65px;
     text-align: left;
     color: white;
-    font-size: 14px;
     background-color: #667292;
-    padding: 10px;
+    font-size: 23px;
+    font-weight: bold;
+    padding: 2px 10px 2px 10px;
     border: 3px outset #8d9db6;
     border-radius: .4em;
 }
 /* The Modal (profile card) */
 #modal {
   display: none; /* Hidden by default */
-  /* position: fixed; Stay in place */
-  position: fixed;
+  /* position: fixed; Stays in front of profile button */
+  position: absolute;
   z-index: 1; /* Sit on top */
-  padding-top: 35px; /* Location of the box */
-  padding-bottom: 35px;
+  /* padding-top: 35px; Location of the box
+  padding-bottom: 35px; */
   left: 13px;
   top: 83px;
-  width: 20%; /* Full width */
-  height: 40%; /* Full height */
+  width: 285px; /* Full width */
+  height: 320px; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: #8d9db6; /* Fallback color */
   border: 10px #8d9db6;   
@@ -39,27 +44,35 @@
   box-shadow: 0px 11px 30px 5px rgba(0, 0, 0, 0.2);
 }
 #modal-container{
-    height: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     color : #f0eae8;
+    text-align: center;
 }
-
+#fullName{
+    font-size: 40px;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
 .modal-button{
         cursor: pointer;
         border-radius: 5em;
-        color: #fff;
-        background: linear-gradient(to right, #667292, #8d9db6);
+        color: #f0eae8;
+        background-color: #667292;
         border: 0;
         padding-left: 40px;
         padding-right: 40px;
         padding-bottom: 10px;
         padding-top: 10px;
         font-family: Arial, Helvetica, sans-serif, sans-serif;
+        text-align: center;
         /*margin-left: 35%;*/
-        font-size: 13px;
+        width: 175px;
+        font-size: 18px;
         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
         display: flex;
         justify-self: center;
@@ -67,36 +80,55 @@
         outline: none;
 }
 
+.profile-button{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#closeProfileButton {
+    background-color: #667292;
+    color: #f0eae8;
+    box-shadow: 0px 11px 30px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 0.3em;
+}
+
 #modal-transform{
-    position: fixed; 
-    padding-top: 100px; /* Location of the box */
-    border: 1px solid lightgray;
+    position: absolute; 
+    /* padding-top: 100px; Location of the box */
+    box-shadow: 0px 11px 30px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 0.3em;
     right: 0px;
     top:0px;
-    width: 30%; /* Full width */
-    height: 100%; /* Full height */
+    width: 400px; /* Full width */
+    height: 100vh; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: #8d9db6; /* Fallback color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #avatar {
-    width: 40px;
-    height: 40px;
+    width: 100px;
+    height: 100px;
     border-radius: .3em;
+    padding-bottom: 0px;
+    order: 10px #8d9db6;   
+
 }
 
 #avatar-transform{
-    width: 100%;
-    height: 350px;
+    width: 300px;
+    height: 300px;
 }
 
-#profile {
+/* #profile {
     width: 100%;
     text-align: left;
     height: 50px;
-    /* margin-top: 30px;
-    margin-bottom: 30px; */
-}
+    margin-top: 30px;
+    margin-bottom: 30px;
+} */
 
 #profile:hover{
     background-color: #667292;
@@ -125,12 +157,12 @@
     background-color: #667292;
 }
 
-#sign-out-workspace {
+/* #sign-out-workspace {
     width: 100%;
     text-align: left;
     height: 50px;
    
-}
+} */
 
 #sign-out-workspace:hover{
     background-color: #667292;
@@ -150,9 +182,26 @@
 
 #editButton
 {
-  height: 30px ; 
-  width: 120px;
-  margin: 30px
+    cursor: pointer;
+    border-radius: 5em;
+    color: #f0eae8;
+    background-color: #667292;
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 28%;
+    width: 175px;
+    font-size: 18px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    display: flex;
+    justify-self: center;
+    border: none;
+    outline: none;
 }
 
 #editButton:hover{
@@ -189,7 +238,7 @@ margin-top: center;
     height: 50%;
     text-align: left;
     color: white;
-    font-size: 14px;
+    font-size: 18px;
     background-color: #667292;
     padding: 10px;
     border: 3px outset #8d9db6;
@@ -206,7 +255,7 @@ margin-top: center;
     height: 50%;
     text-align: left;
     color: white;
-    font-size: 14px;
+    font-size: 18px;
     background-color: #667292;
     padding: 10px;
     border: 3px outset #8d9db6;
