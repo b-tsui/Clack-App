@@ -9,21 +9,12 @@ const channels = document.querySelector(".channels")
 
 addChannel.addEventListener("click", event => {
     addChannelModal.style.display = "block";
-    //you only need to set parent element display to = none
-    // addChannelFormContainer.style.display = "block";
-    // // channel.style.display = "block";
-    // addChannelForm.style.display = "block";
 })
 
 //closing the create channel form pop-up twith X button
 const closeCreateChannel = document.querySelector(".closeCreateChannel")
 closeCreateChannel.addEventListener("click", event => {
-
-    // channel.style.display = "none";
     addChannelModal.style.display = "none";
-    //you only need to set parent element display to = none;
-    // addChannelForm.style.display = "none";
-    // addChannelFormContainer.style.display = "none";
 })
 
 //Creates div for each public channel and add events listeners on them
@@ -44,71 +35,78 @@ const getAllPublicChannels = async function () {
                 channelDisplayBtn.classList.add('channelDisplay');
                 channelDisplayBtn.setAttribute("id", `display${channel.id}`);
                 channelDisplayBtn.innerHTML = `#${channel.name}`;
-                const nav = document.querySelector(".nav");
-                nav.appendChild(channelDisplayBtn);
+                const editChannelContainer = document.getElementById("editChannelContainer");
+                editChannelContainer.appendChild(channelDisplayBtn);
 
 
                 //get the modal to display on the right corner once press the channel name
                 let channelModal = document.getElementById("channelModal")
+                let channelModalContainer = document.querySelector('.channel-modal-container')
+                let channelModalName = document.getElementById("channelModalName")
                 channelDisplayBtn.addEventListener("click", event => {
                     channelModal.style.display = "block";
                     channelModal.classList.remove('hidden');
-                    channelModal.innerHTML = `#${channel.name}`;
+
+
+                    channelModalName.innerHTML = `#${channel.name}`;
+
+
                     //add edit button for the channel
-                    const editChannel = document.getElementById("editChannel")
-                    const editButton = document.createElement("button");
-                    editButton.setAttribute("id", "editChannelButton")
-                    const textEditButton = document.createTextNode("Edit channel");
-                    editButton.appendChild(textEditButton);
-                    editButton.classList.add("btn")
-                    channelModal.appendChild(editButton);
-                    //once press the edit button a pop-up will appear to change the name of the channel
-                    editButton.addEventListener("click", event => {
-                        editChannel.style.display = "block";
-                    })
-
-
+                    if (channelModalContainer.childElementCount < 3) {
+                        const editChannel = document.getElementById("editChannel")
+                        const editButton = document.createElement("button");
+                        editButton.setAttribute("id", "editChannelButton")
+                        const textEditButton = document.createTextNode("Edit channel");
+                        editButton.appendChild(textEditButton);
+                        editButton.classList.add("btn")
+                        channelModalContainer.appendChild(editButton);
+                        //once press the edit button a pop-up will appear to change the name of the channel
+                        editButton.addEventListener("click", event => {
+                            editChannel.style.display = "block";
+                        })
+                    }
 
 
 
                     //add delete button for the channel
-                    const deleteButton = document.createElement("button");
-                    deleteButton.setAttribute("id", "deleteChannelButton")
-                    const textDeleteButton = document.createTextNode("Delete channel");
-                    deleteButton.appendChild(textDeleteButton);
-                    deleteButton.classList.add("btn")
-                    channelModal.appendChild(deleteButton);
+                    if (channelModalContainer.childElementCount < 3) {
+                        const deleteButton = document.createElement("button");
+                        deleteButton.setAttribute("id", "deleteChannelButton")
+                        const textDeleteButton = document.createTextNode("Delete channel");
+                        deleteButton.appendChild(textDeleteButton);
+                        deleteButton.classList.add("btn")
+                        channelModalContainer.appendChild(deleteButton);
 
-                    const userId = localStorage.getItem("CLACK_CURRENT_USER_ID");
-                    const channelId = localStorage.getItem("CLACK_CURRENT_CHANNEL_ID");
+                        const userId = localStorage.getItem("CLACK_CURRENT_USER_ID");
+                        const channelId = localStorage.getItem("CLACK_CURRENT_CHANNEL_ID");
 
-                    //delete button for the channel
-                    deleteButton.addEventListener("click", async event => {
-                        event.preventDefault();
+                        //delete button for the channel
+                        deleteButton.addEventListener("click", async event => {
+                            event.preventDefault();
 
-                        try {
-                            const res = await fetch(`https://clackbackend.herokuapp.com/channels/${channelId}`, {
-                                method: "DELETE",
-                                headers: {
-                                    "Content-Type": "application/json",
-                                    Authorization: `Bearer ${localStorage.getItem(
-                                        "CLACK_ACCESS_TOKEN"
-                                    )}`
-                                },
-                                body: JSON.stringify({ userId })
-                            });
+                            try {
+                                const res = await fetch(`https://clackbackend.herokuapp.com/channels/${channelId}`, {
+                                    method: "DELETE",
+                                    headers: {
+                                        "Content-Type": "application/json",
+                                        Authorization: `Bearer ${localStorage.getItem(
+                                            "CLACK_ACCESS_TOKEN"
+                                        )}`
+                                    },
+                                    body: JSON.stringify({ userId })
+                                });
 
-                            if (!res.ok) {
-                                throw res;
+                                if (!res.ok) {
+                                    throw res;
+                                }
+                                document.getElementById(`channel${channel.name}`).remove();
+                                localStorage.setItem("CLACK_CURRENT_CHANNEL_ID", 1);
+                                window.location.href = "/main";
+                            } catch (err) {
+                                console.error(err);
                             }
-                            document.getElementById(`channel${channel.name}`).remove();
-                            localStorage.setItem("CLACK_CURRENT_CHANNEL_ID", 1);
-                            window.location.href = "/main";
-                        } catch (err) {
-                            console.error(err);
-                        }
-                    })
-
+                        })
+                    }
                 })
 
 
@@ -131,6 +129,13 @@ const getAllPublicChannels = async function () {
     }
 }
 getAllPublicChannels();
+
+//closing the channel panel with X button
+const closeChannelPanel = document.getElementById("channelModal")
+const channelModal = document.getElementById("channelModal")
+closeChannelPanel.addEventListener("click", event => {
+    channelModal.style.display = "none";
+})
 
 
 //closing the edit channel pop-up with X button

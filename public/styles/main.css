@@ -28,7 +28,7 @@ body::-webkit-scrollbar-thumb {
 } */
 button:focus {
     color: #667292;
-    background-color: #667292;
+    background-color: #8d9db6;
     border: none;
     outline-color:#667292;
   }
@@ -41,7 +41,7 @@ button:focus {
 } 
 
 .nav {
-    grid-column: 1 / span 2;
+    grid-column: 1 / 2;
     background-color: #667292;
     margin: 0;
     padding-top: 2px;
@@ -54,8 +54,15 @@ button:focus {
     font-size: 40px;
     font-stretch: ultra-expanded;
     color: #f1e3dd;/*changed from gray*/
+}
 
-  }
+#editChannelContainer{
+  grid-column: 2/3;
+  background-color: #667292;
+  display: flex;
+  justify-content: center;
+}
+
 .switch-container{
     grid-column: 3;
     background-color: #667292;
@@ -252,10 +259,15 @@ input:checked + .slider:before {
 
 .channelDisplay{
   display: block;
-  position: absolute;
-  top: 2px;
-  left: 600px;
   text-align: center;
+  border-color: #667292;
+  border-radius: 12px;
+  background-color: #8d9db6;
+  color: #f1e3dd;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+  outline: none;
+  font-size: 24px;
+  margin: 6px 0px;
 }
 
 /* The Modal (profile card) */
@@ -275,6 +287,32 @@ input:checked + .slider:before {
   overflow: auto; /* Enable scroll if needed */
   background-color: #8d9db6; /* Fallback color */
 
+}
+
+.closeChannelPanel{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background-color: #667292;
+    color: #f0eae8;
+    height: 25px;
+    width: 25px;
+    box-shadow: 0px 11px 20px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    border-color: #667292;
+    outline: none;
+}
+
+.channel-modal-container{
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 10%;
+  font-size: 42px;
+  color: #667292;
+  font-weight: bold;
 }
 
 #addChannelModal {
@@ -335,9 +373,6 @@ input:checked + .slider:before {
 }
 
 #editChannelButton{
-    position: fixed;
-    top: 60px;
-    right: 10px;
 }
 
 /* .textChannel{
@@ -346,21 +381,38 @@ color: black;
 } */
 
 #editChannel {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none; 
+    /* position: fixed; Stay in place */
+    position: absolute;
+    z-index: 1; 
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0);
+    background-color: rgba(0, 0, 0, .7);
+    vertical-align: middle;
     left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: #8d9db6; /* Fallback color */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    font-size: 24px;
+    color: #f0eae8;
+}
+
+.edit-channel-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15%;
+}
+.textChannel{
+  font-size: 32px;
+  font-weight: bold;
+  color: #f0eae8
 }
 
 #editChannelForm {
-  display: none;
-  width: 80%;
+  width: 50%;
   height: 80%;
   font-weight: 700;
   font-size: 14px;
@@ -369,9 +421,25 @@ color: black;
   position: relative;
   left: 20px;
   padding: 10px 20px;
-  background-color: white;
+  color: #f0eae8;
+  background-color: #8d9db6;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif, sans-serif;
+  display: flex;
+}
+
+.closeEditChannel{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background-color: #667292;
+    color: #f0eae8;
+    height: 25px;
+    width: 25px;
+    box-shadow: 0px 11px 20px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    border-color: #667292;
+    outline: none;
 }
 
 
