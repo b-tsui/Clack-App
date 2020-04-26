@@ -51,26 +51,28 @@ const getAllPublicChannels = async function () {
     channelDisplayBtn.addEventListener("click", event => {
     channelModal.style.display = "block";
     channelModal.classList.remove('hidden');
+    channelModal.innerHTML = `#${channel.name}`;
     //add edit button for the channel
     const editChannel = document.getElementById("editChannel")
     const editButton = document.createElement("button");
     editButton.setAttribute("id", "editChannelButton")
     const textEditButton = document.createTextNode("Edit channel");
     editButton.appendChild(textEditButton);
+    editButton.classList.add("btn")
     channelModal.appendChild(editButton);
     //once press the edit button a pop-up will appear to change the name of the channel
     editButton.addEventListener("click", event => {
         editChannel.style.display = "block";
     })
 
-})
+     //add delete button for the channel
+     const deleteButton = document.createElement("button");
+     deleteButton.setAttribute("id", "deleteChannelButton")
+     const textDeleteButton = document.createTextNode("Delete channel");
+     deleteButton.appendChild(textDeleteButton);
+     deleteButton.classList.add("btn")
+     channelModal.appendChild(deleteButton);
 
-//closing the edit profile pop-up with X button
-const closeEditChannel = document.querySelector(".closeEditChannel")
-editChannel = document.getElementById("editChannel");
-// editChannelForm = document.getElementById("editChannelForm");
-closeEditChannel.addEventListener("click", event => {
-    editChannel.style.display = "none";
 })
 
 
@@ -95,7 +97,13 @@ closeEditChannel.addEventListener("click", event => {
 getAllPublicChannels();
 
 
-
+//closing the edit profile pop-up with X button
+const closeEditChannel = document.querySelector(".closeEditChannel")
+const editChannel = document.getElementById("editChannel");
+// editChannelForm = document.getElementById("editChannelForm");
+closeEditChannel.addEventListener("click", event => {
+    editChannel.style.display = "none";
+})
 
 
 
