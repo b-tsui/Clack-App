@@ -27,10 +27,10 @@ div.panel
           div#addChannelFormContainer
             form.form#addChannelForm
               div  
-                label(for="name") Enter Name 
-                input.form-input(type="text", name="name", placeholder="")   
+                label(for="name")
+                input.form-input(type="text", name="name", placeholder="Enter Channel Name")   
               div
-                button.btn(type='submit') Create Channel
+                button.btn#createChannelButton(type='submit') Create Channel
               div
                 button.closeCreateChannel(type='button') x
   div.directMessage
@@ -52,13 +52,6 @@ div.editProfile
         button.btn(type='cancel') Cancel
     button.closeEditProfile(type='button') x
     div#editProfileImg
-<<<<<<< HEAD
-      div#pict
-        img(src="https://spartacus-educational.com/00aristotle.jpg") 
-      button#btnpict(type='submit') Update Photo
-
-=======
       div
         img#pict(src="./images/moon-emoji.png") 
       button#btnpict(type='submit') Update Photo
->>>>>>> master
