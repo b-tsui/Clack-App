@@ -479,32 +479,5 @@ outline: none;
     outline: none;
 }
 
-  /* #addChannelModal {
-    display: none; /* Hidden by default 
-    position: fixed; /* Stay in place 
-    z-index: 1; /* Sit on top
-    padding-top: 100px; /* Location of the box 
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width 
-    height: 100%; /* Full height 
-    overflow: auto; /* Enable scroll if needed 
-    background-color: #8d9db6; /* Fallback color
 
-  } */
-  
-  /* #addChannelForm {
-    width: 80%;
-    height: 80%;
-    font-weight: 700;
-    font-size: 14px;
-    display: block;
-    letter-spacing: 1px;
-    position: relative;
-    left: 20px;
-    padding: 10px 20px;
-    background-color: white;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif, sans-serif;
-  } */
 

@@ -48,63 +48,68 @@ const getAllPublicChannels = async function () {
                 nav.appendChild(channelDisplayBtn);
 
 
-     //get the modal to display on the right corner once press the channel name
-    let channelModal = document.getElementById("channelModal")
-    channelDisplayBtn.addEventListener("click", event => {
-    channelModal.style.display = "block";
-    channelModal.classList.remove('hidden');
-    channelModal.innerHTML = `#${channel.name}`;
-    //add edit button for the channel
-    const editChannel = document.getElementById("editChannel")
-    const editButton = document.createElement("button");
-    editButton.setAttribute("id", "editChannelButton")
-    const textEditButton = document.createTextNode("Edit channel");
-    editButton.appendChild(textEditButton);
-    editButton.classList.add("btn")
-    channelModal.appendChild(editButton);
-    //once press the edit button a pop-up will appear to change the name of the channel
-    editButton.addEventListener("click", event => {
-        editChannel.style.display = "block";
-    })
+                //get the modal to display on the right corner once press the channel name
+                let channelModal = document.getElementById("channelModal")
+                channelDisplayBtn.addEventListener("click", event => {
+                    channelModal.style.display = "block";
+                    channelModal.classList.remove('hidden');
+                    channelModal.innerHTML = `#${channel.name}`;
+                    //add edit button for the channel
+                    const editChannel = document.getElementById("editChannel")
+                    const editButton = document.createElement("button");
+                    editButton.setAttribute("id", "editChannelButton")
+                    const textEditButton = document.createTextNode("Edit channel");
+                    editButton.appendChild(textEditButton);
+                    editButton.classList.add("btn")
+                    channelModal.appendChild(editButton);
+                    //once press the edit button a pop-up will appear to change the name of the channel
+                    editButton.addEventListener("click", event => {
+                        editChannel.style.display = "block";
+                    })
 
 
 
 
 
-     //add delete button for the channel
-     const deleteButton = document.createElement("button");
-     deleteButton.setAttribute("id", "deleteChannelButton")
-     const textDeleteButton = document.createTextNode("Delete channel");
-     deleteButton.appendChild(textDeleteButton);
-     deleteButton.classList.add("btn")
-     channelModal.appendChild(deleteButton);
+                    //add delete button for the channel
+                    const deleteButton = document.createElement("button");
+                    deleteButton.setAttribute("id", "deleteChannelButton")
+                    const textDeleteButton = document.createTextNode("Delete channel");
+                    deleteButton.appendChild(textDeleteButton);
+                    deleteButton.classList.add("btn")
+                    channelModal.appendChild(deleteButton);
 
- 
-     //delete button for the channel
-     deleteButton.addEventListener("click", async event =>{
-        event.preventDefault();
+                    const userId = localStorage.getItem("CLACK_CURRENT_USER_ID");
+                    const channelId = localStorage.getItem("CLACK_CURRENT_CHANNEL_ID");
 
-        try {
-            const res = await fetch(`https://clackbackend.herokuapp.com/channels/${channelId}`, {
-              method: "DELETE",
-              headers: {
-                Authorization: `Bearer ${localStorage.getItem(
-                  "CLACK_ACCESS_TOKEN"
-                )}`
-              },
-            });
-            if (!res.ok) {
-              throw res;
-            }
-            document.getElementById(`#channel-${channelId}`).remove();
-            // localStorage.removeItem("CLACK_ACCESS_TOKEN");
-            window.location.href = "/";
-          } catch (err) {
-            console.error(err);
-          }
-    })
+                    //delete button for the channel
+                    deleteButton.addEventListener("click", async event => {
+                        event.preventDefault();
 
-})
+                        try {
+                            const res = await fetch(`https://clackbackend.herokuapp.com/channels/${channelId}`, {
+                                method: "DELETE",
+                                headers: {
+                                    "Content-Type": "application/json",
+                                    Authorization: `Bearer ${localStorage.getItem(
+                                        "CLACK_ACCESS_TOKEN"
+                                    )}`
+                                },
+                                body: JSON.stringify({ userId })
+                            });
+
+                            if (!res.ok) {
+                                throw res;
+                            }
+                            document.getElementById(`channel${channel.name}`).remove();
+                            localStorage.setItem("CLACK_CURRENT_CHANNEL_ID", 1);
+                            window.location.href = "/main";
+                        } catch (err) {
+                            console.error(err);
+                        }
+                    })
+
+                })
 
 
             }
@@ -180,17 +185,18 @@ const channelId = localStorage.getItem("CLACK_CURRENT_CHANNEL_ID")
 
 const saveChannelEdit = document.getElementById("saveChannelEdit")
 const editChannelForm = document.getElementById("editChannelForm")
-saveChannelEdit.addEventListener("click", async event =>{
+editChannelForm.addEventListener("submit", async event => {
     event.preventDefault();
     // const editChannelForm = document.getElementById("editChannelForm ")
     //Grabs form input and creates a body object with them
     const formData = new FormData(editChannelForm);
-    const newName = formData.get("name")
+    const newName = formData.get("name");
     const body = {
-        name: newName
+        name: newName,
+        userId
     }
-     //Send a put request to update the channel name
-     try {
+    //Send a put request to update the channel name
+    try {
         const res = await fetch(`https://clackbackend.herokuapp.com/channels/${channelId}`,
             {
                 method: "PUT",
@@ -211,8 +217,7 @@ saveChannelEdit.addEventListener("click", async event =>{
             name
         } = await res.json();
         console.log(name)
-        localStorage.setItem("CLACK_CURRENT_CHANNEL_NAME", name);
-        window.location.href = "/main";
+        window.location.reload();
     } catch (err) {
         console.error(err);
     }
