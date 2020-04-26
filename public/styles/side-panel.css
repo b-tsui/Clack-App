@@ -96,6 +96,7 @@
     box-shadow: 0px 11px 30px 5px rgba(0, 0, 0, 0.2);
     border-radius: 50%;
     border-color: #667292;
+    outline: none;
 }
 
 #modal-transform{
@@ -343,7 +344,7 @@ margin-top: center;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-content: center;
+    align-items: center;
 }
 #editProfileForm{
     width: 250px;
@@ -478,24 +479,21 @@ outline: none;
     outline: none;
 }
 
-<<<<<<< HEAD
- 
-=======
-  #addChannelModal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+  /* #addChannelModal {
+    display: none; /* Hidden by default 
+    position: fixed; /* Stay in place 
+    z-index: 1; /* Sit on top
+    padding-top: 100px; /* Location of the box 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: #8d9db6; /* Fallback color */
+    width: 100%; /* Full width 
+    height: 100%; /* Full height 
+    overflow: auto; /* Enable scroll if needed 
+    background-color: #8d9db6; /* Fallback color
 
-  }
+  } */
   
-  #addChannelForm {
+  /* #addChannelForm {
     width: 80%;
     height: 80%;
     font-weight: 700;
@@ -508,6 +506,5 @@ outline: none;
     background-color: white;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif, sans-serif;
-  }
+  } */
 
->>>>>>> master

@@ -17,7 +17,7 @@ userModalButton.addEventListener("click", event => {
     //toggles modal view when profile button is clicked
     setTimeout(function () {
         modal.style.display = modal.style.display === 'block' ? '' : 'block';
-    }, 1)
+    }, 0.1)
     //modal.style.display = "block";
 });
 
@@ -97,12 +97,11 @@ profile.addEventListener("click", event => {
     //redirect the user to the edit page/pop-up for the profile
 
     editButton.addEventListener("click", event => {
-        editProfile.style.display = "block";
-        let gridContainer = document.querySelector(".grid-container");
-        gridContainer.classList.add("editProfileTransform")
-        // const editProfileTransform = document.querySelector(".editProfileTransform");
-        // editProfileTransform.style.display = "block"
-
+        setTimeout(function () {
+            editProfile.style.display = "block";
+            let gridContainer = document.querySelector(".grid-container");
+            gridContainer.classList.add("editProfileTransform")
+        })
     })
 
 
@@ -117,12 +116,15 @@ profile.addEventListener("click", event => {
         modal.style.display = "none";
     });
 
+    // document.addEventListener("click", e => {
+    //     if (!editProfile.contains(event.target) && editProfile.style.display === "block") {
+    //         editProfile.style.display = "none";
+    //     }
+    // });
+
+
     //modal closing functionality
     chatContainer.addEventListener("click", e => {
-        //remove the profile pop-up from the page
-        if (editProfile.style.display === "block") {
-            editProfile.style.display = "none";
-        }
         //remove the profile pop-up from the page
         if (modal.style.display === "block") {
             modal.style.display = "none";
