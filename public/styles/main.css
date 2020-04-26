@@ -28,7 +28,7 @@ body::-webkit-scrollbar-thumb {
 } */
 button:focus {
     color: #667292;
-    background-color: #667292;
+    background-color: #8d9db6;
     border: none;
     outline-color:#667292;
   }
@@ -42,7 +42,7 @@ button:focus {
 } 
 
 .nav {
-    grid-column: 1 / span 2;
+    grid-column: 1 / 2;
     background-color: #667292;
     margin: 0;
     padding-top: 2px;
@@ -55,8 +55,15 @@ button:focus {
     font-size: 40px;
     font-stretch: ultra-expanded;
     color: #f1e3dd;/*changed from gray*/
+}
 
-  }
+#editChannelContainer{
+  grid-column: 2/3;
+  background-color: #667292;
+  display: flex;
+  justify-content: center;
+}
+
 .switch-container{
     grid-column: 3;
     background-color: #667292;
@@ -253,10 +260,15 @@ input:checked + .slider:before {
 
 .channelDisplay{
   display: block;
-  position: absolute;
-  top: 2px;
-  left: 600px;
   text-align: center;
+  border-color: #667292;
+  border-radius: 12px;
+  background-color: #8d9db6;
+  color: #f1e3dd;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+  outline: none;
+  font-size: 24px;
+  margin: 6px 0px;
 }
 
 /* The Modal (profile card) */
@@ -276,6 +288,32 @@ input:checked + .slider:before {
   overflow: auto; /* Enable scroll if needed */
   background-color: #8d9db6; /* Fallback color */
 
+}
+
+.closeChannelPanel{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background-color: #667292;
+    color: #f0eae8;
+    height: 25px;
+    width: 25px;
+    box-shadow: 0px 11px 20px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    border-color: #667292;
+    outline: none;
+}
+
+.channel-modal-container{
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 10%;
+  font-size: 32px;
+  color: #667292;
+  font-weight: bold;
 }
 
 #addChannelModal {
@@ -336,9 +374,6 @@ input:checked + .slider:before {
 }
 
 #editChannelButton{
-    position: fixed;
-    top: 60px;
-    right: 10px;
 }
 
 /* .textChannel{

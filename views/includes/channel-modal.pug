@@ -1,5 +1,6 @@
 div#channelModal
-  div.channel-modal-container 
+  button.closeChannelPanel(type='button') X
+  div.channel-modal-container
     div#channelModalName
       div#channelModalContent
         //- div.profile-button
@@ -11,15 +12,16 @@ div#channelModal
         //- div
         //-   //- this needs to be changed to the variable workspace
         //-   button.modal-button(align="center" type="submit" id="sign-out-workspace") Sign Out
-div#editChannel
-  .edit-channel-form
-    div.textChannel Edit Channel
-    form.form#editChannelForm 
-      div  
-        label.textChannel(for="name") Enter New Name 
-        input.form-input(type="text", name="name", placeholder="")   
-      div
-        button.btn#saveChannelEdit(type='submit') Save Changes
-      div
-        button.closeEditChannel(type='submit') x
-      
+div#editChannelContainer
+  div#editChannel
+    .edit-channel-form
+      div.textChannel Edit Channel
+      form.form#editChannelForm 
+        div  
+          label.textChannel(for="name") Enter New Name 
+          input.form-input(type="text", name="name", placeholder="")   
+        div
+          button.btn#saveChannelEdit(type='submit') Save Changes
+        div
+          button.closeEditChannel(type='submit') x
+        
