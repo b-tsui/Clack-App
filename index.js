@@ -17,12 +17,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 const io = socket(server);
 io.on('connection', (socket) => {
     console.log('Socket Connection Established!!!', socket.id);
+
+    //adds functionality to leave/join different channels
+    socket.on('room', function (room) {
+        if (socket.room)
+            socket.leave(socket.room);
+
+        socket.room = room;
+        socket.join(room);
+    });
     socket.on('chat', data => {
-        io.sockets.emit('chat', data);
+        io.to(socket.room).emit('chat', data);
 
     });
     socket.on('typing', data => {
-        socket.broadcast.emit('typing', data);
+        socket.broadcast.to(socket.room).emit('typing', data);
     });
 });
 

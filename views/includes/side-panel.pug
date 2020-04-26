@@ -7,7 +7,7 @@ div.panel
       div#modal-container 
         div#fullName
         div#modalContent
-          img(src="./images/poop-emoji.png" id="avatar")
+          img(src="./images/moon-emoji.png" id="avatar")
         div.profile-button
           button.modal-button(type="submit" id="profile") View profile
         //- div
@@ -43,16 +43,22 @@ div.panel
     
   
 div.editProfile
-  div.edit-profile-form
+  div.edit-profile-container
     div#edit Edit Your Profile
     form.form#editProfileForm
       include edit-profile.pug
       div.btns
-        button.btn#saveProfileEdit(type='submit') Save changes
+        button.btn#saveProfileEdit(type='submit') Save
         button.btn(type='cancel') Cancel
     button.closeEditProfile(type='button') x
     div#editProfileImg
+<<<<<<< HEAD
       div#pict
         img(src="https://spartacus-educational.com/00aristotle.jpg") 
       button#btnpict(type='submit') Update Photo
 
+=======
+      div
+        img#pict(src="./images/moon-emoji.png") 
+      button#btnpict(type='submit') Update Photo
+>>>>>>> master

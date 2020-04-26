@@ -8,8 +8,9 @@ nameDisplay.innerHTML = localStorage.getItem("CLACK_CURRENT_USER_FULLNAME");
 
 const userId = localStorage.getItem("CLACK_CURRENT_USER_ID");
 const editProfileForm = document.getElementById("editProfileForm")
+const saveProfileEdit = document.getElementById("saveProfileEdit")
 
-editProfileForm.addEventListener("submit", async event => {
+saveProfileEdit.addEventListener("submit", async event => {
     event.preventDefault();
 
     //Grabs form input and creates a body object with them
@@ -50,14 +51,12 @@ editProfileForm.addEventListener("submit", async event => {
 })
 
 //log out user by clearing the localStorage and redirect to the splash page
-const logOutButton =  document.getElementById("sign-out-workspace");
-logOutButton.addEventListener("click", event =>{
+const logOutButton = document.getElementById("sign-out-workspace");
+logOutButton.addEventListener("click", event => {
     event.preventDefault();
     localStorage.removeItem("CLACK_CURRENT_USER_FULLNAME");
     localStorage.removeItem("CLACK_CURRENT_USER_ID");
     localStorage.removeItem("CLACK_ACCESS_TOKEN");
-    window.location.href ="/";
+    window.location.href = "/";
 })
-
- 
 

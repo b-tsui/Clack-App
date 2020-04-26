@@ -1,3 +1,4 @@
+import { handleErrors } from "./utils.js"
 var slideIndex = 0;
 showSlides();
 
@@ -13,3 +14,37 @@ function showSlides() {
     setTimeout(showSlides, 3000); // Change image every 2 seconds
 }
 
+
+const splashDemo = document.getElementById("demoUser");
+splashDemo.addEventListener("click", async (e) => {
+    e.preventDefault();
+    try {
+        const res = await fetch(`https://clackbackend.herokuapp.com/users/token`, {
+            method: "POST",
+            body: JSON.stringify({
+                email: "demo@demo.com",
+                password: "demo"
+            }),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+        if (!res.ok) {
+            throw res;
+        }
+        const {
+            token,
+            user: { id, name },
+        } = await res.json();
+        // Stores fullName, access_token, and user_id in localStorage:
+        localStorage.setItem("CLACK_CURRENT_USER_FULLNAME", name)
+        localStorage.setItem("CLACK_ACCESS_TOKEN", token);
+        localStorage.setItem("CLACK_CURRENT_USER_ID", id);
+        localStorage.setItem("CLACK_CURRENT_CHANNEL_ID", 1);
+
+        // Redirects user to main channel page
+        window.location.href = "/main";
+    } catch (err) {
+        handleErrors(err);
+    }
+})

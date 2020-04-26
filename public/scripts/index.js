@@ -12,6 +12,12 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     const name = localStorage.getItem("CLACK_CURRENT_USER_FULLNAME");
     const channelId = localStorage.getItem("CLACK_CURRENT_CHANNEL_ID");
 
+    //Makes socket rooms for each channel and emits signal to server side
+    var socketRoom = `room${channelId}`;
+    socket.on('connect', () => {
+        socket.emit('room', socketRoom);
+    });
+
     //Grabs all elements for chat container
     const chatWin = document.querySelector(".chatWin");
     const input = document.getElementById("messages");
