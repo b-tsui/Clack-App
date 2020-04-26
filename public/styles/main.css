@@ -258,6 +258,7 @@ input:checked + .slider:before {
 
 
 .channelDisplay{
+  cursor: pointer;
   display: block;
   text-align: center;
   border-color: #667292;
