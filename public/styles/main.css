@@ -33,6 +33,7 @@ button:focus {
     outline-color:#667292;
   }
 
+
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 5fr 150px;
