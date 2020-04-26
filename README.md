@@ -1,6 +1,8 @@
 # Clack-App
 Clack is a messaging app based on Slack
+
 Check us out here: [Clack App](https://clackapp.herokuapp.com)
+
 Backend for app here: [Clack-App-Backend](https://github.com/b-tsui/Clack-App-Backend)
 
 ## Documentation links
