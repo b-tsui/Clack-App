@@ -278,32 +278,60 @@ input:checked + .slider:before {
 }
 
 #addChannelModal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
+    display: none; 
+    /* position: fixed; Stay in place */
+    position: absolute;
+    z-index: 1; 
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0);
+    background-color: rgba(0, 0, 0, .7);
+    vertical-align: middle;
+    left: 0;
+    top: 0;
 
+    font-size: 24px;
+    color: #f0eae8;
+}
+#addChannelFormContainer{
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+}
 #addChannelForm {
-  width: 80%;
-  height: 80%;
+  width: 400px;
+  height: 100px;
   font-weight: 700;
   font-size: 14px;
   display: block;
   letter-spacing: 1px;
   position: relative;
-  left: 20px;
-  padding: 10px 20px;
-  background-color: white;
+  top: 20%;
+  padding: 35px 20px;
+  background-color: #8d9db6;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif, sans-serif;
+  font-size: 24px;
+}
+
+#createChannelButton{
+  display: inline-block;
+  width: 250px;
+  margin-top: 15px;
+}
+
+.closeCreateChannel{
+  position: absolute;
+    top: 15px;
+    right: 20px;
+    background-color: #667292;
+    color: #f0eae8;
+    height: 25px;
+    width: 25px;
+    box-shadow: 0px 11px 30px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    border-color: #667292;
+    outline: none;
 }
 
 #editChannelButton{
@@ -318,20 +346,16 @@ color: black;
 } */
 
 #editChannel {
-  display: none; 
-  /* position: fixed; Stay in place */
-  position: fixed;
-  /* top: 50px; */
-  top:0;
-  right:0;
-  padding: 50px;
-  z-index: 1; 
-  width: 100%;
-  height: 100%;
-  /* border-radius: 1.5em; */
-  /* background-color: #fefefe; */
-  background-color: rgba(0, 0, 0);
-  background-color: rgba(0, 0, 0, .7);
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #8d9db6; /* Fallback color */
 }
 
 #editChannelForm {

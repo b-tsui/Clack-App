@@ -9,9 +9,10 @@ const channels = document.querySelector(".channels")
 
 addChannel.addEventListener("click", event => {
     addChannelModal.style.display = "block";
-    addChannelFormContainer.style.display = "block";
-    // channel.style.display = "block";
-    addChannelForm.style.display = "block";
+    //you only need to set parent element display to = none
+    // addChannelFormContainer.style.display = "block";
+    // // channel.style.display = "block";
+    // addChannelForm.style.display = "block";
 })
 
 //closing the create channel form pop-up twith X button
@@ -20,8 +21,9 @@ closeCreateChannel.addEventListener("click", event => {
 
     // channel.style.display = "none";
     addChannelModal.style.display = "none";
-    addChannelForm.style.display = "none";
-    addChannelFormContainer.style.display = "none";
+    //you only need to set parent element display to = none;
+    // addChannelForm.style.display = "none";
+    // addChannelFormContainer.style.display = "none";
 })
 
 //Creates div for each public channel and add events listeners on them
@@ -44,6 +46,7 @@ const getAllPublicChannels = async function () {
                 channelDisplayBtn.innerHTML = `#${channel.name}`;
                 const nav = document.querySelector(".nav");
                 nav.appendChild(channelDisplayBtn);
+
 
      //get the modal to display on the right corner once press the channel name
     let channelModal = document.getElementById("channelModal")
@@ -113,8 +116,8 @@ const getAllPublicChannels = async function () {
             div.addEventListener("click", event => {
                 localStorage.setItem("CLACK_CURRENT_CHANNEL_ID", channel.id);
                 window.location.reload();
-   
-               
+
+
 
             })
         })
