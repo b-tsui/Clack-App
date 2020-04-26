@@ -478,6 +478,9 @@ outline: none;
     outline: none;
 }
 
+<<<<<<< HEAD
+ 
+=======
   #addChannelModal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -507,3 +510,4 @@ outline: none;
     font-family: Arial, Helvetica, sans-serif, sans-serif;
   }
 
+>>>>>>> master
