@@ -52,7 +52,7 @@ const getAllPublicChannels = async function () {
 
 
                     //add edit button for the channel
-                    if (!document.getElementById("deleteChannelButton")) {
+                    if (channelModalContainer.childElementCount < 3) {
                         const editChannel = document.getElementById("editChannel")
                         const editButton = document.createElement("button");
                         editButton.setAttribute("id", "editChannelButton")
@@ -69,45 +69,44 @@ const getAllPublicChannels = async function () {
 
 
                     //add delete button for the channel
-                    if (!document.getElementById("deleteChannelButton")) {
+                    if (channelModalContainer.childElementCount < 3) {
                         const deleteButton = document.createElement("button");
                         deleteButton.setAttribute("id", "deleteChannelButton")
                         const textDeleteButton = document.createTextNode("Delete channel");
                         deleteButton.appendChild(textDeleteButton);
                         deleteButton.classList.add("btn")
                         channelModalContainer.appendChild(deleteButton);
-                    }
 
-                    const userId = localStorage.getItem("CLACK_CURRENT_USER_ID");
-                    const channelId = localStorage.getItem("CLACK_CURRENT_CHANNEL_ID");
+                        const userId = localStorage.getItem("CLACK_CURRENT_USER_ID");
+                        const channelId = localStorage.getItem("CLACK_CURRENT_CHANNEL_ID");
 
-                    //delete button for the channel
-                    deleteButton.addEventListener("click", async event => {
-                        event.preventDefault();
+                        //delete button for the channel
+                        deleteButton.addEventListener("click", async event => {
+                            event.preventDefault();
 
-                        try {
-                            const res = await fetch(`https://clackbackend.herokuapp.com/channels/${channelId}`, {
-                                method: "DELETE",
-                                headers: {
-                                    "Content-Type": "application/json",
-                                    Authorization: `Bearer ${localStorage.getItem(
-                                        "CLACK_ACCESS_TOKEN"
-                                    )}`
-                                },
-                                body: JSON.stringify({ userId })
-                            });
+                            try {
+                                const res = await fetch(`https://clackbackend.herokuapp.com/channels/${channelId}`, {
+                                    method: "DELETE",
+                                    headers: {
+                                        "Content-Type": "application/json",
+                                        Authorization: `Bearer ${localStorage.getItem(
+                                            "CLACK_ACCESS_TOKEN"
+                                        )}`
+                                    },
+                                    body: JSON.stringify({ userId })
+                                });
 
-                            if (!res.ok) {
-                                throw res;
+                                if (!res.ok) {
+                                    throw res;
+                                }
+                                document.getElementById(`channel${channel.name}`).remove();
+                                localStorage.setItem("CLACK_CURRENT_CHANNEL_ID", 1);
+                                window.location.href = "/main";
+                            } catch (err) {
+                                console.error(err);
                             }
-                            document.getElementById(`channel${channel.name}`).remove();
-                            localStorage.setItem("CLACK_CURRENT_CHANNEL_ID", 1);
-                            window.location.href = "/main";
-                        } catch (err) {
-                            console.error(err);
-                        }
-                    })
-
+                        })
+                    }
                 })
 
 
