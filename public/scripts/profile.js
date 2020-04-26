@@ -10,7 +10,7 @@ const userId = localStorage.getItem("CLACK_CURRENT_USER_ID");
 const editProfileForm = document.getElementById("editProfileForm")
 const saveProfileEdit = document.getElementById("saveProfileEdit")
 
-saveProfileEdit.addEventListener("submit", async event => {
+saveProfileEdit.addEventListener("click", async event => {
     event.preventDefault();
 
     //Grabs form input and creates a body object with them
@@ -23,32 +23,37 @@ saveProfileEdit.addEventListener("submit", async event => {
     }
 
     //Send a put request to update the user's fullName/email
-    try {
-        const res = await fetch(`https://clackbackend.herokuapp.com/users/${userId}`,
-            {
-                method: "PUT",
-                body: JSON.stringify(body),
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${localStorage.getItem('CLACK_ACCESS_TOKEN')}`
-                },
-            })
+    if (Number(userId) === 1) {
+        alert("Sorry! You cannot change the name as Demo User. Please sign-up your own account for access to this functionality")
+    } else {
+        try {
+            const res = await fetch(`https://clackbackend.herokuapp.com/users/${userId}`,
+                {
+                    method: "PUT",
+                    body: JSON.stringify(body),
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${localStorage.getItem('CLACK_ACCESS_TOKEN')}`
+                    },
+                })
 
-        if (!res.ok) {
-            throw res;
+            if (!res.ok) {
+                throw res;
+            }
+
+            //Reset the user's fullName in the localStorage and redirect
+            //to main page
+            const {
+                fullName
+            } = await res.json();
+            localStorage.setItem("CLACK_CURRENT_USER_FULLNAME", fullName);
+            window.location.href = "/main";
+        } catch (err) {
+            console.error(err);
         }
-
-        //Reset the user's fullName in the localStorage and redirect
-        //to main page
-        const {
-            fullName
-        } = await res.json();
-        localStorage.setItem("CLACK_CURRENT_USER_FULLNAME", fullName);
-        window.location.href = "/main";
-    } catch (err) {
-        console.error(err);
     }
 })
+
 
 //log out user by clearing the localStorage and redirect to the splash page
 const logOutButton = document.getElementById("sign-out-workspace");

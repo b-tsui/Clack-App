@@ -66,8 +66,6 @@ const getAllPublicChannels = async function () {
                         })
                     }
 
-
-
                     //add delete button for the channel
                     if (channelModalContainer.childElementCount < 3) {
                         const deleteButton = document.createElement("button");
@@ -108,8 +106,6 @@ const getAllPublicChannels = async function () {
                         })
                     }
                 })
-
-
             }
 
             let div = document.createElement("div");
@@ -119,9 +115,6 @@ const getAllPublicChannels = async function () {
             div.addEventListener("click", event => {
                 localStorage.setItem("CLACK_CURRENT_CHANNEL_ID", channel.id);
                 window.location.reload();
-
-
-
             })
         })
     } catch (err) {
@@ -137,14 +130,12 @@ closeChannelPanel.addEventListener("click", event => {
     channelModal.style.display = "none";
 })
 
-
 //closing the edit channel pop-up with X button
 const closeEditChannel = document.querySelector(".closeEditChannel")
 const editChannel = document.getElementById("editChannel");
 closeEditChannel.addEventListener("click", event => {
     editChannel.style.display = "none";
 })
-
 
 
 //Gets the user_id and fullName from local storage
