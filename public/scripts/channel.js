@@ -17,7 +17,7 @@ addChannel.addEventListener("click", event => {
 //closing the create channel form pop-up twith X button
 const closeCreateChannel = document.querySelector(".closeCreateChannel")
 closeCreateChannel.addEventListener("click", event => {
-   
+
     // channel.style.display = "none";
     addChannelModal.style.display = "none";
     addChannelForm.style.display = "none";
@@ -26,7 +26,7 @@ closeCreateChannel.addEventListener("click", event => {
 
 //Creates div for each public channel and add events listeners on them
 //so that when a user clicks on them it will reload the correct channel
-const getAllPublicChannels = async function() {
+const getAllPublicChannels = async function () {
     try {
         const allChannels = await fetch("https://clackbackend.herokuapp.com/channels", {
             headers: {
@@ -36,6 +36,46 @@ const getAllPublicChannels = async function() {
         const pubChannels = await allChannels.json();
         const channelNameDiv = document.getElementById("channelNames");
         pubChannels.forEach((channel) => {
+            console.log(channel.id);
+            console.log(Number(localStorage.getItem("CLACK_CURRENT_CHANNEL_ID")));
+            if (Number(localStorage.getItem("CLACK_CURRENT_CHANNEL_ID")) === channel.id) {
+                let channelDisplayBtn = document.createElement("button");
+                channelDisplayBtn.classList.add('channelDisplay');
+                channelDisplayBtn.setAttribute("id", `display${channel.id}`);
+                channelDisplayBtn.innerHTML = `#${channel.name}`;
+                const nav = document.querySelector(".nav");
+                nav.appendChild(channelDisplayBtn);
+
+     //get the modal to display on the right corner once press the channel name
+    let channelModal = document.getElementById("channelModal")
+    channelDisplayBtn.addEventListener("click", event => {
+    channelModal.style.display = "block";
+    channelModal.classList.remove('hidden');
+    //add edit button for the channel
+    const editChannel = document.getElementById("editChannel")
+    const editButton = document.createElement("button");
+    editButton.setAttribute("id", "editChannelButton")
+    const textEditButton = document.createTextNode("Edit channel");
+    editButton.appendChild(textEditButton);
+    channelModal.appendChild(editButton);
+    //once press the edit button a pop-up will appear to change the name of the channel
+    editButton.addEventListener("click", event => {
+        editChannel.style.display = "block";
+    })
+
+})
+
+//closing the edit profile pop-up with X button
+const closeEditChannel = document.querySelector(".closeEditChannel")
+editChannel = document.getElementById("editChannel");
+// editChannelForm = document.getElementById("editChannelForm");
+closeEditChannel.addEventListener("click", event => {
+    editChannel.style.display = "none";
+})
+
+
+            }
+
             let div = document.createElement("div");
             div.setAttribute("id", `channel${channel.name}`);
             div.innerHTML = `<a href="/main" class="links channelName"># ${channel.name}</a>`;
@@ -43,6 +83,9 @@ const getAllPublicChannels = async function() {
             div.addEventListener("click", event => {
                 localStorage.setItem("CLACK_CURRENT_CHANNEL_ID", channel.id);
                 window.location.reload();
+   
+               
+
             })
         })
     } catch (err) {
@@ -50,6 +93,11 @@ const getAllPublicChannels = async function() {
     }
 }
 getAllPublicChannels();
+
+
+
+
+
 
 //Gets the user_id and fullName from local storage
 const userId = localStorage.getItem("CLACK_CURRENT_USER_ID");
@@ -81,7 +129,7 @@ addChannelForm.addEventListener("submit", async (event) => {
             throw res;
         }
 
-        const { channel: {id, name} } = await res.json();
+        const { channel: { id, name } } = await res.json();
         console.log(id);
         localStorage.setItem("CLACK_CURRENT_CHANNEL_ID", id);
         window.location.href = `/main`;
@@ -89,3 +137,25 @@ addChannelForm.addEventListener("submit", async (event) => {
         handleErrors(e);
     }
 })
+
+// let channelModal = document.getElementById("channelModal")
+// console.log(channelModal)
+// const channelDisplayBtn = document.getElementById(`display${channel.id}`);
+// console.log(channelDisplayBtn)
+// channelDisplayBtn.addEventListener("click", event => {
+//     channelModal.style.display = "block";
+//     channelModal.classList.remove('hidden');
+//     //add edit button for the channel
+//     const editChannel = document.querySelector(".editChannel")
+//     const editButton = document.createElement("button");
+//     editButton.setAttribute("id", "editChannelButton")
+//     const textEditButton = document.createTextNode("Edit channel");
+//     editButton.appendChild(textEditButton);
+//     channelModal.appendChild(editButton);
+//     //once press the edit button a pop-up will appear to change the name of the channel
+//     editButton.addEventListener("click", event => {
+//         editChannel.style.display = "block";
+
+//     })
+// })
+

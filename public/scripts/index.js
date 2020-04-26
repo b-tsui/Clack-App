@@ -19,8 +19,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
 
     //Grabs emoji switch button from navbar to test toggle emojiView
     const emojiSwitch = document.getElementById("emoji-switch");
-
-
+    
     try {
 
         //Checks to see if current user is authorized (logged in)
