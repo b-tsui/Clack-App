@@ -98,7 +98,7 @@ button:focus {
 
     /* position: relative; */
     padding: 5px;
-    /*heigh of nav+message field + 20 for chatWin padding and border*/
+    /*height of nav+message field + 20 for chatWin padding and border*/
     height: calc(100vh - 157px); 
     font-size: 18px;
     overflow: auto;
