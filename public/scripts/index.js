@@ -126,7 +126,9 @@ document.addEventListener("DOMContentLoaded", async (event) => {
 
         chatWin.appendChild(div); // slack puts the texts on the bottom and it stacks underneath pushing old one higher up
         div.scrollIntoView(false); // .scrollIntoView() = .scrollIntoView(true) - all work the same in the case with appendChild() vs prepend()
-        // messageDisplay.innerHTML += `<div><strong>${data.sender}</strong> : ${data.message}    ${chatTimeStamp}</div>`;
+
+        //plays sound to notify users a message was sent to channel;
+        document.getElementById('audio').play();
     });
 
     //When a signal for typing is received, displays a message showing that someone is typing
