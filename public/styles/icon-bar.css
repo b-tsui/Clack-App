@@ -1,7 +1,7 @@
 
 .icon-bar {
+  display: none;/*hiding for now*/
   width: 100%; /* Full-width */
-  
   overflow: auto; /* Overflow due to float */
 }
 

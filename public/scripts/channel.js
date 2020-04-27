@@ -87,9 +87,7 @@ const getAllPublicChannels = async function () {
                                     method: "DELETE",
                                     headers: {
                                         "Content-Type": "application/json",
-                                        Authorization: `Bearer ${localStorage.getItem(
-                                            "CLACK_ACCESS_TOKEN"
-                                        )}`
+                                        Authorization: `Bearer ${localStorage.getItem("CLACK_ACCESS_TOKEN")}`
                                     },
                                     body: JSON.stringify({ userId })
                                 });
