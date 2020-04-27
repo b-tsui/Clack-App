@@ -451,8 +451,9 @@ outline: none;
     outline: none;
 }
 
-
+/*update photo feature not available yet*/
 #btnpict{
+    display: none;
     color: #f0eae8;
     font-family: Arial, Helvetica, sans-serif, sans-serif;
     position: absolute;
@@ -473,10 +474,15 @@ outline: none;
     width: 175px;
     font-size: 18px;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
-    display: flex;
+    /*display: flex;*/
     justify-content: center;
     border: none;
     outline: none;
+}
+
+/*Feature not functioning yet*/
+.directMessage{
+    display: none
 }
 
 
