@@ -1,4 +1,4 @@
-import { handleErrors } from "./utils.js";
+import { handleErrors, api } from "./utils.js";
 
 const logInForm = document.querySelector(".log-in-form");
 const demoLogIn = document.getElementById("demoUser");
@@ -14,7 +14,7 @@ logInForm.addEventListener("submit", async (e) => {
 
     //Makes a post request to grab access token for user
     try {
-        const res = await fetch("https://clackbackend.herokuapp.com/users/token", {
+        const res = await fetch(`${api}users/token`, {
             method: "POST",
             body: JSON.stringify(body),
             headers: {
@@ -32,7 +32,7 @@ logInForm.addEventListener("submit", async (e) => {
         } = await res.json();
 
         // Stores fullName, access_token, and user_id in localStorage:
-        localStorage.setItem("CLACK_CURRENT_USER_FULLNAME", name)
+        localStorage.setItem("CLACK_CURRENT_USER_FULLNAME", name);
         localStorage.setItem("CLACK_ACCESS_TOKEN", token);
         localStorage.setItem("CLACK_CURRENT_USER_ID", id);
         localStorage.setItem("CLACK_CURRENT_CHANNEL_ID", 1);
@@ -49,7 +49,7 @@ logInForm.addEventListener("submit", async (e) => {
 demoLogIn.addEventListener("click", async (e) => {
     e.preventDefault();
     try {
-        const res = await fetch(`https://clackbackend.herokuapp.com/users/token`, {
+        const res = await fetch(`${api}users/token`, {
             method: "POST",
             body: JSON.stringify({
                 email: "demo@demo.com",
@@ -67,7 +67,7 @@ demoLogIn.addEventListener("click", async (e) => {
             user: { id, name },
         } = await res.json();
         // Stores fullName, access_token, and user_id in localStorage:
-        localStorage.setItem("CLACK_CURRENT_USER_FULLNAME", name)
+        localStorage.setItem("CLACK_CURRENT_USER_FULLNAME", name);
         localStorage.setItem("CLACK_ACCESS_TOKEN", token);
         localStorage.setItem("CLACK_CURRENT_USER_ID", id);
         localStorage.setItem("CLACK_CURRENT_CHANNEL_ID", 1);
