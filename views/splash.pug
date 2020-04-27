@@ -1,62 +1,62 @@
 doctype html
 html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        link(rel="icon" type="image/png" sizes="32x32" href="./images/favicon.ico")
-        title Clack App
-        
-        link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous")
-        link(rel="stylesheet", type="text/css", href="./styles/styles.css")
-        link(rel="api" href=`${api}`)
-    body    
-      div
-        nav.nav
-          a(href="https://github.com/b-tsui/Clack-App" target="_blank") About
-          a(href="https://github.com/b-tsui/Clack-App" target="_blank") Contact
-          a(href="/sign-up") Sign-Up
-          a(href="/log-in") Log-In
-          button(type="button" id="demoUser") Demo
-            a(href="/main")
-      h1 Welcome to Cl🅰️ck!
-      //- carousel slideshow
-      div(class="slideshow-container")
-        div(class="mySlides fade")
-          div(class="numbertext") 1 / 3
-          img(src="./images/workspace.jpg" style="width:100%")
-          div(class="text") Caption Text
-        div(class="mySlides fade")
-          div(class="numbertext") 2 / 3
-          img(src="./images/live-chat.jpg" style="width:100%")
-          div(class="text") Caption Two
-        div(class="mySlides fade")
-          div(class="numbertext") 3 / 3
-          img(src="./images/workspace2.jpg" style="width:100%")
-          div(class="text") Caption Three
-        a(class="prev" onclick="plusSlides(-1)") &#10094;
-        a(class="next" onclick="plusSlides(1)") &#10095;
-      div(style="text-align:center")
-        span(class="dot" onclick="currentSlide(1)")
-        span(class="dot" onclick="currentSlide(2)")
-        span(class="dot" onclick="currentSlide(3)")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="icon" type="image/png" sizes="32x32" href="./images/favicon.ico")
+    title Clack App
 
-      //- parallax
-      
-      div.intro WORK FROM HOME 
-      div.intro Clack brings the team together, wherever you are with all of your communication and tools in one place. Remote teams will stay productive no matter where you're working from.
-      
-      div.parallax
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous")
+    link(rel="stylesheet", type="text/css", href="./styles/styles.css")
+    link(rel="api" href=`${api}`)
+  body    
+    div
+      nav.nav
+        a(href="https://github.com/b-tsui/Clack-App" target="_blank") About
+        a(href="https://github.com/b-tsui/Clack-App" target="_blank") Contact
+        a(href="/sign-up") Sign-Up
+        a(href="/log-in") Log-In
+        button(type="button" id="demoUser") Demo
+          a(href="/main")
+    h1 Welcome to Cl🅰️ck!
+    //- carousel slideshow
+    div(class="slideshow-container")
+      div(class="mySlides fade")
+        div(class="numbertext") 1 / 3
+        img(src="./images/workspace.jpg" style="width:100%")
+        div(class="text") Caption Text
+      div(class="mySlides fade")
+        div(class="numbertext") 2 / 3
+        img(src="./images/live-chat.jpg" style="width:100%")
+        div(class="text") Caption Two
+      div(class="mySlides fade")
+        div(class="numbertext") 3 / 3
+        img(src="./images/workspace2.jpg" style="width:100%")
+        div(class="text") Caption Three
+      a(class="prev" onclick="plusSlides(-1)") &#10094;
+      a(class="next" onclick="plusSlides(1)") &#10095;
+    div(style="text-align:center")
+      span(class="dot" onclick="currentSlide(1)")
+      span(class="dot" onclick="currentSlide(2)")
+      span(class="dot" onclick="currentSlide(3)")
 
-      div(class="embed-responsive embed-responsive-21by9")
-        iframe(class="embed-responsive-item" src="https://www.youtube.com/embed/EYqxQGmQkVw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+    //- parallax
 
-      div.intro Break out of the inbox. Working in channels gives everyone on your team a shared view of progress and purpose.
+    div.intro WORK FROM HOME 
+    div.intro Clack brings the team together, wherever you are with all of your communication and tools in one place. Remote teams will stay productive no matter where you're working from.
 
-      div.parallaxTwo
+    div.parallax
 
-      div.intro Shared channels bring companies together. Now channels can help you work as closely with external partners and clients as you do with teams down the hall.
+    div(class="embed-responsive embed-responsive-21by9")
+      iframe(class="embed-responsive-item" src="https://www.youtube.com/embed/EYqxQGmQkVw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
 
-      div.parallaxThree
-      
-      script(type="module" src="./scripts/splash.js")
-      script(type="module" src="scripts/log-in.js")     
+    div.intro Break out of the inbox. Working in channels gives everyone on your team a shared view of progress and purpose.
+
+    div.parallaxTwo
+
+    div.intro Shared channels bring companies together. Now channels can help you work as closely with external partners and clients as you do with teams down the hall.
+
+    div.parallaxThree
+
+    script(type="module" src="./scripts/splash.js")
+    script(type="module" src="scripts/log-in.js")     
