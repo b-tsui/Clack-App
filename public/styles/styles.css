@@ -161,18 +161,6 @@ h1 {
 }
 
 .parallax {
-  background-image: url('../images/workhome.jpg');
-  /* Set a specific height */
-  min-height: 500px; 
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.parallaxTwo {
   background-image: url('../images/workhome3.jpg');
   /* Set a specific height */
   min-height: 500px; 
@@ -184,8 +172,20 @@ h1 {
   background-size: cover;
 }
 
+.parallaxTwo {
+  background-image: url('../images/emoji.jpeg');
+  /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .parallaxThree {
-  background-image: url('../images/workhome4.jpg');
+  background-image: url('../images/workhome.jpg');
   /* Set a specific height */
   min-height: 500px; 
 
