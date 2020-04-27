@@ -1,4 +1,4 @@
-import { handleErrors } from "./utils.js"
+import { handleErrors, api } from "./utils.js";
 var slideIndex = 0;
 showSlides();
 
@@ -9,7 +9,7 @@ function showSlides() {
         slides[i].style.display = "none";
     }
     slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1 }
+    if (slideIndex > slides.length) { slideIndex = 1 };
     slides[slideIndex - 1].style.display = "block";
     setTimeout(showSlides, 3000); // Change image every 2 seconds
 }
@@ -19,7 +19,7 @@ const splashDemo = document.getElementById("demoUser");
 splashDemo.addEventListener("click", async (e) => {
     e.preventDefault();
     try {
-        const res = await fetch(`https://clackbackend.herokuapp.com/users/token`, {
+        const res = await fetch(`${api}users/token`, {
             method: "POST",
             body: JSON.stringify({
                 email: "demo@demo.com",
@@ -37,7 +37,7 @@ splashDemo.addEventListener("click", async (e) => {
             user: { id, name },
         } = await res.json();
         // Stores fullName, access_token, and user_id in localStorage:
-        localStorage.setItem("CLACK_CURRENT_USER_FULLNAME", name)
+        localStorage.setItem("CLACK_CURRENT_USER_FULLNAME", name);
         localStorage.setItem("CLACK_ACCESS_TOKEN", token);
         localStorage.setItem("CLACK_CURRENT_USER_ID", id);
         localStorage.setItem("CLACK_CURRENT_CHANNEL_ID", 1);
@@ -47,4 +47,4 @@ splashDemo.addEventListener("click", async (e) => {
     } catch (err) {
         handleErrors(err);
     }
-})
+});

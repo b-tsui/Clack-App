@@ -1,14 +1,14 @@
-
+import { handleErrors, api } from "./utils.js";
 //When user logs in, their full name will get displayed on the sidebar
 //and profile modal
 const fullNameElement = document.getElementById("fullName");
-const nameDisplay = document.getElementById("nameDisplay")
+const nameDisplay = document.getElementById("nameDisplay");
 fullNameElement.innerHTML = localStorage.getItem("CLACK_CURRENT_USER_FULLNAME");
 nameDisplay.innerHTML = localStorage.getItem("CLACK_CURRENT_USER_FULLNAME");
 
 const userId = localStorage.getItem("CLACK_CURRENT_USER_ID");
-const editProfileForm = document.getElementById("editProfileForm")
-const saveProfileEdit = document.getElementById("saveProfileEdit")
+const editProfileForm = document.getElementById("editProfileForm");
+const saveProfileEdit = document.getElementById("saveProfileEdit");
 
 saveProfileEdit.addEventListener("click", async event => {
     event.preventDefault();
@@ -20,14 +20,14 @@ saveProfileEdit.addEventListener("click", async event => {
     const body = {
         fullName: newName,
         email: newEmail
-    }
+    };
 
     //Send a put request to update the user's fullName/email
     if (Number(userId) === 1) {
-        alert("Sorry! You cannot change the name as Demo User. Please sign-up your own account for access to this functionality")
+        alert("Sorry! You cannot change the name as Demo User. Please sign-up your own account for access to this functionality");
     } else {
         try {
-            const res = await fetch(`https://clackbackend.herokuapp.com/users/${userId}`,
+            const res = await fetch(`${api}users/${userId}`,
                 {
                     method: "PUT",
                     body: JSON.stringify(body),
@@ -52,7 +52,7 @@ saveProfileEdit.addEventListener("click", async event => {
             console.error(err);
         }
     }
-})
+});
 
 
 //log out user by clearing the localStorage and redirect to the splash page
@@ -63,5 +63,5 @@ logOutButton.addEventListener("click", event => {
     localStorage.removeItem("CLACK_CURRENT_USER_ID");
     localStorage.removeItem("CLACK_ACCESS_TOKEN");
     window.location.href = "/";
-})
+});
 

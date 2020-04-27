@@ -1,10 +1,10 @@
 export const handleErrors = async (err) => {
     const errorsContainer = document.querySelector(".errors-container");
     if (err.status === 401) {
-        errorsContainer.innerHTML = "login failed"
+        errorsContainer.innerHTML = "login failed";
     } else if (err.status >= 400 && err.status < 600) {
         const errorJSON = await err.json();
-        console.log(err.status)
+        console.log(err.status);
         let errorsHtml = [
             `
         <div class="alert alert-danger">
@@ -39,7 +39,7 @@ export const handleErrors = async (err) => {
             "Something went wrong. Please check your internet connection and try again!"
         );
     }
-};
+}
 
 //-----------------------------------------------------------------------------------
 // Function that takes in a message, translate it into emoji letters, and returns that new message
@@ -92,5 +92,7 @@ export const emojiTranslate = (message) => {
         } else {
             return char;
         }
-    }).join('')
+    }).join('');
 }
+
+export const api = document.querySelector('link[rel="api"]').href;

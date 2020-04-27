@@ -1,4 +1,4 @@
-import { emojiTranslate, handleErrors } from "./utils.js";
+import { emojiTranslate, handleErrors, api } from "./utils.js";
 document.addEventListener("DOMContentLoaded", async (event) => {
 
     //uses a fetch on '/' to grab dynamic port that heroku provides
@@ -25,11 +25,11 @@ document.addEventListener("DOMContentLoaded", async (event) => {
 
     //Grabs emoji switch button from navbar to test toggle emojiView
     const emojiSwitch = document.getElementById("emoji-switch");
-    
+
     try {
 
         //Checks to see if current user is authorized (logged in)
-        const user = await fetch(`https://clackbackend.herokuapp.com/users/${userId}`, {
+        const user = await fetch(`${api}users/${userId}`, {
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${localStorage.getItem('CLACK_ACCESS_TOKEN')}`
@@ -48,11 +48,11 @@ document.addEventListener("DOMContentLoaded", async (event) => {
         }
 
         //If user is authorized, grabs all messages from database for main channel
-        const allMessages = await fetch(`https://clackbackend.herokuapp.com/channels/${channelId}/messages`, {
+        const allMessages = await fetch(`${api}channels/${channelId}/messages`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('CLACK_ACCESS_TOKEN')}`
             }
-        })
+        });
 
         const { Messages } = await allMessages.json();
         const messagesContainer = document.querySelector(".messageDisplay");
@@ -67,43 +67,22 @@ document.addEventListener("DOMContentLoaded", async (event) => {
                 div.style.paddingBottom = "10px";
                 div.innerHTML = `<div class="message-text"><strong>${fullName}</strong> : <span class="message">${message}</span><span class="emojiMessage hidden">${emojiTranslate(message)}</span>    (${new Date(createdAt).getHours()}:${new Date(createdAt).getMinutes()}:${new Date(createdAt).getSeconds()})</div>`;
                 return div;
-            })
+            });
         messagesHTML.forEach(message => {
             chatWin.appendChild(message);
             message.scrollIntoView(false);
         });
-
-        //Old implementation to get messages from database onto screen
-        // `
-        // <div class="message">
-        // 	<span class="message-author">
-        // 		<strong>${fullName}</strong> : 
-        // 	</span>
-        // 	<span class="message-body">
-        // 	<span class="message-text"> ${message}</span>
-        //     </span>
-        //     <span class="timestamp">
-        //          (${new Date(createdAt).getHours()}:${new Date(createdAt).getMinutes()}:${new Date(createdAt).getSeconds()})
-        //     </span>
-        // </div>
-        // `
-        //messagesContainer.innerHTML += messagesHTML.join("");
-
-
     }
-    catch (e) {
-        handleErrors(e);
+    catch (err) {
+        handleErrors(err);
     }
-
-    //const messageDisplay = document.querySelector(".messageDisplay");
-
 
     //Wait for user to press the 'enter' to make a post request for new messages
     input.addEventListener('keypress', async (e) => {
         if (e.key === 'Enter') {
 
             try {
-                const message = await fetch(`https://clackbackend.herokuapp.com/channels/${channelId}/messages`, {
+                const message = await fetch(`${api}channels/${channelId}/messages`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -113,10 +92,10 @@ document.addEventListener("DOMContentLoaded", async (event) => {
                         userId,
                         message: input.value,
                     })
-                })
+                });
             }
-            catch (e) {
-                handleErrors(e);
+            catch (err) {
+                handleErrors(err);
             }
 
             //Emits socket signal for chat
@@ -160,7 +139,7 @@ document.addEventListener("DOMContentLoaded", async (event) => {
     //When a user clicks on the emoji view button, toggles the classlists for message
     //spans and the button itself
     emojiSwitch.addEventListener('change', e => {
-        emojiSwitch.classList.toggle("emojiView")//this is how socket knows if emojiView is on or not
+        emojiSwitch.classList.toggle("emojiView");//this is how socket knows if emojiView is on or not
 
         const allEmojiMessageSpans = document.querySelectorAll(".emojiMessage");
         const allMessageSpans = document.querySelectorAll('.message');
@@ -172,9 +151,9 @@ document.addEventListener("DOMContentLoaded", async (event) => {
         allEmojiMessageSpans.forEach(emojiMessageSpan => {
             emojiMessageSpan.classList.toggle("hidden");
         });
-    })
+    });
 
-})
+});
 
 
 
