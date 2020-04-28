@@ -43,13 +43,13 @@ const getAllPublicChannels = async function () {
                 let channelModal = document.getElementById("channelModal");
                 let channelModalContainer = document.querySelector('.channel-modal-container');
                 let channelModalName = document.getElementById("channelModalName");
+
+
                 channelDisplayBtn.addEventListener("click", event => {
                     channelModal.style.display = "block";
-                    channelModal.classList.remove('hidden');
-
+                    //channelModal.classList.remove('hidden');
 
                     channelModalName.innerHTML = `#${channel.name}`;
-
 
                     //add edit button for the channel
                     if (channelModalContainer.childElementCount < 3) {
@@ -104,6 +104,8 @@ const getAllPublicChannels = async function () {
                         });
                     }
                 });
+
+
             }
 
             let div = document.createElement("div");
@@ -122,16 +124,24 @@ const getAllPublicChannels = async function () {
 getAllPublicChannels();
 
 //closing the channel panel with X button
-const closeChannelPanel = document.getElementById("channelModal");
+const closeChannelPanel = document.querySelector(".closeChannelPanel");
 const channelModal = document.getElementById("channelModal");
 closeChannelPanel.addEventListener("click", event => {
     channelModal.style.display = "none";
+});
+
+//closing channel panel by clicking off it
+document.addEventListener('click', event => {
+    if (!channelModal.contains(event.target) && modal.style.display === "block") {
+        channelModal.style.display = 'none';
+    }
 });
 
 //closing the edit channel pop-up with X button
 const closeEditChannel = document.querySelector(".closeEditChannel");
 const editChannel = document.getElementById("editChannel");
 closeEditChannel.addEventListener("click", event => {
+    event.preventDefault();
     editChannel.style.display = "none";
 });
 
