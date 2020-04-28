@@ -35,7 +35,6 @@ profile.addEventListener("click", event => {
     editButton.appendChild(textEditButton);
     modal.appendChild(editButton);
 
-
     //styling img for the user to be bigger by adding an id and styling it on side-panel.css
     const avatar = document.getElementById("avatar");
     avatar.setAttribute("id", "avatar-transform");
@@ -52,7 +51,6 @@ profile.addEventListener("click", event => {
         });
     });
 
-
     // //add closing button to close the profile edit pop-up
     const closeProfileButton = document.createElement("button");
     closeProfileButton.setAttribute("id", "closeProfileButton");
@@ -65,7 +63,6 @@ profile.addEventListener("click", event => {
     });
 
     //modal closing functionality
-
     document.addEventListener("click", e => {
         if (!modal.contains(e.target) && modal.style.display === "block") {
             //remove the profile pop-up from the page
@@ -82,21 +79,6 @@ profile.addEventListener("click", event => {
             }
         }
     });
-
-    // chatContainer.addEventListener("click", e => {
-    //     //remove the profile pop-up from the page
-    //     if (modal.style.display === "block") {
-    //         modal.style.display = "none";
-    //     }
-    //     if (document.getElementById("modal-transform")) {
-    //         //resets side profile
-    //         modal.setAttribute("id", "modal");
-    //         avatar.setAttribute("id", "avatar");
-    //         profile.removeAttribute("id");
-    //         modal.removeChild(document.getElementById("editButton"));
-    //         modal.removeChild(document.getElementById("closeProfileButton"));
-    //     }
-    // });
 });
 
 //closing the edit profile pop-up with X button
