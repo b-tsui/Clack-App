@@ -66,6 +66,7 @@ profile.addEventListener("click", event => {
     });
 
     //modal closing functionality
+
     chatContainer.addEventListener("click", e => {
         //remove the profile pop-up from the page
         if (modal.style.display === "block") {
@@ -88,7 +89,7 @@ closeEditProfile.addEventListener("click", event => {
     editProfile.style.display = "none";
 });
 
-document.addEventListener("click", e => {
+document.addEventListener("click", event => {
     if (!modal.contains(event.target) && modal.style.display === "block") {
         modal.style.display = "none";
     }
