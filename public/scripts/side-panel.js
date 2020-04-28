@@ -63,12 +63,13 @@ profile.addEventListener("click", event => {
     });
 
     //modal closing functionality
-    document.addEventListener("click", e => {
-        if (!modal.contains(e.target) && modal.style.display === "block") {
-            //remove the profile pop-up from the page
 
-            modal.style.display = "none";
 
+    document.addEventListener("click", event => {
+        if (!modal.contains(event.target)) {
+            if (modal.style.dislay === "block") {
+                modal.style.display = "none";
+            }
             if (document.getElementById("modal-transform")) {
                 //resets side profile
                 modal.setAttribute("id", "modal");
@@ -85,6 +86,12 @@ profile.addEventListener("click", event => {
 const closeEditProfile = document.querySelector(".closeEditProfile");
 closeEditProfile.addEventListener("click", event => {
     editProfile.style.display = "none";
+});
+
+document.addEventListener("click", event => {
+    if (!modal.contains(event.target) && modal.style.display === "block") {
+        modal.style.display = "none";
+    }
 });
 
 

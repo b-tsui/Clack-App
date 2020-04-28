@@ -29,7 +29,6 @@ const getAllPublicChannels = async function () {
         const pubChannels = await allChannels.json();
         const channelNameDiv = document.getElementById("channelNames");
         pubChannels.forEach((channel) => {
-            console.log(Number(localStorage.getItem("CLACK_CURRENT_CHANNEL_ID")));
             if (Number(localStorage.getItem("CLACK_CURRENT_CHANNEL_ID")) === channel.id) {
                 let channelDisplayBtn = document.createElement("button");
                 channelDisplayBtn.classList.add('channelDisplay');
@@ -128,13 +127,6 @@ const closeChannelPanel = document.querySelector(".closeChannelPanel");
 const channelModal = document.getElementById("channelModal");
 closeChannelPanel.addEventListener("click", event => {
     channelModal.style.display = "none";
-});
-
-//closing channel panel by clicking off it
-document.addEventListener('click', event => {
-    if (!channelModal.contains(event.target) && modal.style.display === "block") {
-        channelModal.style.display = 'none';
-    }
 });
 
 //closing the edit channel pop-up with X button
