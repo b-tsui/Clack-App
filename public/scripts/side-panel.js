@@ -28,7 +28,6 @@ const profile = document.getElementById("profile");
 profile.addEventListener("click", event => {
     modal.setAttribute("id", "modal-transform");
     //add the word 'Profile' on the top of the modal
-
     //add edit button for the profile
     const editButton = document.createElement("button");
     editButton.setAttribute("id", "editButton");
@@ -67,20 +66,37 @@ profile.addEventListener("click", event => {
 
     //modal closing functionality
 
-    chatContainer.addEventListener("click", e => {
-        //remove the profile pop-up from the page
-        if (modal.style.display === "block") {
+    document.addEventListener("click", e => {
+        if (!modal.contains(e.target) && modal.style.display === "block") {
+            //remove the profile pop-up from the page
+
             modal.style.display = "none";
-        }
-        if (document.getElementById("modal-transform")) {
-            //resets side profile
-            modal.setAttribute("id", "modal");
-            avatar.setAttribute("id", "avatar");
-            profile.removeAttribute("id");
-            modal.removeChild(document.getElementById("editButton"));
-            modal.removeChild(document.getElementById("closeProfileButton"));
+
+            if (document.getElementById("modal-transform")) {
+                //resets side profile
+                modal.setAttribute("id", "modal");
+                avatar.setAttribute("id", "avatar");
+                profile.removeAttribute("id");
+                modal.removeChild(document.getElementById("editButton"));
+                modal.removeChild(document.getElementById("closeProfileButton"));
+            }
         }
     });
+
+    // chatContainer.addEventListener("click", e => {
+    //     //remove the profile pop-up from the page
+    //     if (modal.style.display === "block") {
+    //         modal.style.display = "none";
+    //     }
+    //     if (document.getElementById("modal-transform")) {
+    //         //resets side profile
+    //         modal.setAttribute("id", "modal");
+    //         avatar.setAttribute("id", "avatar");
+    //         profile.removeAttribute("id");
+    //         modal.removeChild(document.getElementById("editButton"));
+    //         modal.removeChild(document.getElementById("closeProfileButton"));
+    //     }
+    // });
 });
 
 //closing the edit profile pop-up with X button
@@ -89,11 +105,6 @@ closeEditProfile.addEventListener("click", event => {
     editProfile.style.display = "none";
 });
 
-document.addEventListener("click", event => {
-    if (!modal.contains(event.target) && modal.style.display === "block") {
-        modal.style.display = "none";
-    }
-});
 
 channelDropdown.addEventListener("click", e => {
     channels.classList.toggle("channel");
