@@ -157,6 +157,19 @@ h1 {
     text-align: center;
 }
 
+.footer-container {
+    font-family: Didot sans-serif;
+    font-size: 30px;
+    color: #bccad6;
+    text-align: center;
+}
+
+.footer-contents {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 .parallax {
   background-image: url('../images/workhome3.jpg');
   /* Set a specific height */
