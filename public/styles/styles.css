@@ -158,7 +158,9 @@ h1 {
 }
 
 .footer-container {
+    background-color: #667292;
     font-family: Didot sans-serif;
+    margin-top: 10px
     font-size: 30px;
     color: #bccad6;
     text-align: center;
@@ -168,6 +170,11 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .parallax {
