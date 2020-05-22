@@ -160,7 +160,7 @@ h1 {
 .footer-container {
     background-color: #667292;
     font-family: Didot sans-serif;
-    margin-top: 10px
+    padding-top: 10px;
     font-size: 30px;
     color: #bccad6;
     text-align: center;
